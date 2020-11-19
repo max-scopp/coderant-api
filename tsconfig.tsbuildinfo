@@ -141,10 +141,10 @@
         "signature": "89bf2b7a601b73ea4311eda9c41f86a58994fec1bee3b87c4a14d68d9adcdcbd",
         "affectsGlobalScope": true
       },
-      "./src/types/index.d.ts": {
-        "version": "9e5c91d446ccee37e61d8799c39edbf30c687a005f77a0033c71ae1b0205dd26",
-        "signature": "9e5c91d446ccee37e61d8799c39edbf30c687a005f77a0033c71ae1b0205dd26",
-        "affectsGlobalScope": false
+      "./src/types/index.ts": {
+        "version": "6a006e3d4b460fd82db1adace375f4d8a97092605212a9b8d283da009549c6dd",
+        "signature": "d187d78f951df48eccd09ac8354b732dbc193b9b8748a1191e01adec201de661",
+        "affectsGlobalScope": true
       },
       "./src/api/runtime.ts": {
         "version": "0f427ee60542fe320646787e090f91eec553527a4f45dfc0f05e88a07de065e3",
@@ -242,8 +242,8 @@
         "affectsGlobalScope": false
       },
       "./src/index.ts": {
-        "version": "93ea65fbb7c3e33000eb02a8cda3411863b9a3ff3b616bb156fff17f89349ea5",
-        "signature": "e15250aa43b46b0385bcd693f2d77d151462c09665fedae5e338734196819545",
+        "version": "bedf3a076f017e77f1dcd10c134bc4bc60b815a302a3dbbee3ab79eb34f11488",
+        "signature": "90f1f227de8244a17ed2348439fe0adaf3fa4afa7c489f59c6878febd677bd0f",
         "affectsGlobalScope": false
       },
       "./node_modules/@types/node/globals.d.ts": {
@@ -502,12 +502,8 @@
       "module": 1,
       "moduleResolution": 2,
       "preserveWatchOutput": true,
-      "rootDir": "./src",
       "outDir": "./lib",
-      "typeRoots": [
-        "./src/types",
-        "./node_modules/@types"
-      ],
+      "rootDir": "./src",
       "project": "./",
       "configFilePath": "./tsconfig.json"
     },
@@ -756,7 +752,7 @@
       ],
       "./src/index.ts": [
         "./src/api/index.ts",
-        "./src/types/index.d.ts"
+        "./src/types/index.ts"
       ]
     },
     "exportedModulesMap": {
@@ -1073,7 +1069,7 @@
       "./src/api/models/index.ts",
       "./src/api/runtime.ts",
       "./src/index.ts",
-      "./src/types/index.d.ts"
+      "./src/types/index.ts"
     ]
   },
   "version": "4.0.5"
