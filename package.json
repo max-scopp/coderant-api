@@ -1,12 +1,13 @@
 {
   "name": "coderant-api",
-  "version": "0.0.1-dev.1",
+  "version": "0.0.1-dev.2",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run build:fetch && npm run build:lib",
-    "build:lib": "openapi-generator-cli generate -g typescript-fetch -i ./swagger-spec.json -o lib/",
+    "build": "npm run build:fetch && npm run build:source && npm run build:lib",
+    "build:lib": "tsc --project .",
+    "build:source": "openapi-generator-cli generate -g typescript-fetch -i ./swagger-spec.json -o src/",
     "build:fetch": "ts-node fetch-spec.ts",
     "prepublishOnly": "npm run build"
   },

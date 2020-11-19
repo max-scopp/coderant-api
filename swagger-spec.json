@@ -164,8 +164,7 @@
                     }
                 },
                 "tags": [
-                    "news",
-                    "admin"
+                    "news"
                 ],
                 "security": [
                     {
