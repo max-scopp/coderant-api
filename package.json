@@ -1,0 +1,29 @@
+{
+  "name": "coderant-api",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build:fetch && npm run build:lib",
+    "build:lib": "openapi-generator-cli generate -g typescript-fetch -i ./swagger-spec.json -o lib/",
+    "build:fetch": "ts-node fetch-spec.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/max-scopp/coderant-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/max-scopp/coderant-api/issues"
+  },
+  "homepage": "https://github.com/max-scopp/coderant-api#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.1.4",
+    "@types/node": "^14.14.8"
+  }
+}
