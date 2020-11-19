@@ -54,6 +54,51 @@
                     "content"
                 ]
             },
+            "NewsDTO": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string"
+                    },
+                    "headline": {
+                        "type": "string"
+                    },
+                    "footer": {
+                        "type": "string"
+                    },
+                    "content": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "type",
+                    "headline",
+                    "footer",
+                    "content"
+                ]
+            },
+            "FeedDTO": {
+                "type": "object",
+                "properties": {
+                    "rants": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "wrw": {
+                        "type": "number"
+                    },
+                    "news": {
+                        "$ref": "#/components/schemas/NewsDTO"
+                    }
+                },
+                "required": [
+                    "rants",
+                    "wrw",
+                    "news"
+                ]
+            },
             "CreateRantDTO": {
                 "type": "object",
                 "properties": {
@@ -78,6 +123,81 @@
                     "tags"
                 ]
             },
+            "AssetDTO": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "type": "string"
+                    },
+                    "thumbnail": {
+                        "type": "string"
+                    },
+                    "mime": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "url",
+                    "thumbnail",
+                    "mime"
+                ]
+            },
+            "UserDTO": {
+                "type": "object",
+                "properties": {}
+            },
+            "RantDTO": {
+                "type": "object",
+                "properties": {
+                    "uuid": {
+                        "type": "string"
+                    },
+                    "content": {
+                        "type": "string"
+                    },
+                    "asset": {
+                        "$ref": "#/components/schemas/AssetDTO"
+                    },
+                    "votes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "comments": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "owner": {
+                        "$ref": "#/components/schemas/UserDTO"
+                    },
+                    "updatedAt": {
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "string"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": [
+                    "uuid",
+                    "content",
+                    "asset",
+                    "votes",
+                    "comments",
+                    "owner",
+                    "updatedAt",
+                    "createdAt",
+                    "tags"
+                ]
+            },
             "CreateMessageDTO": {
                 "type": "object",
                 "properties": {
@@ -92,6 +212,46 @@
                 },
                 "required": [
                     "content"
+                ]
+            },
+            "CommentDTO": {
+                "type": "object",
+                "properties": {
+                    "votes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "asset": {
+                        "$ref": "#/components/schemas/AssetDTO"
+                    },
+                    "uuid": {
+                        "type": "string"
+                    },
+                    "owner": {
+                        "type": "string"
+                    },
+                    "content": {
+                        "type": "string"
+                    },
+                    "updatedAt": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "format": "date-time",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "votes",
+                    "asset",
+                    "uuid",
+                    "owner",
+                    "content",
+                    "updatedAt",
+                    "createdAt"
                 ]
             },
             "MakeVoteDTO": {
@@ -226,7 +386,14 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FeedDTO"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -270,7 +437,14 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FeedDTO"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -314,7 +488,14 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FeedDTO"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -340,7 +521,14 @@
                 },
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RantDTO"
+                                }
+                            }
+                        }
                     }
                 },
                 "tags": [
@@ -430,7 +618,14 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RantDTO"
+                                }
+                            }
+                        }
                     }
                 },
                 "tags": [
@@ -468,7 +663,14 @@
                 },
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RantDTO"
+                                }
+                            }
+                        }
                     }
                 },
                 "tags": [
@@ -560,7 +762,17 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/CommentDTO"
+                                    }
+                                }
+                            }
+                        }
                     }
                 },
                 "tags": [
@@ -600,8 +812,15 @@
                     }
                 },
                 "responses": {
-                    "201": {
-                        "description": ""
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RantDTO"
+                                }
+                            }
+                        }
                     }
                 },
                 "tags": [
@@ -638,8 +857,15 @@
                     }
                 },
                 "responses": {
-                    "201": {
-                        "description": ""
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RantDTO"
+                                }
+                            }
+                        }
                     }
                 },
                 "tags": [

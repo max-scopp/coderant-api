@@ -15,6 +15,9 @@
 
 import * as runtime from '../runtime';
 import {
+    CommentDTO,
+    CommentDTOFromJSON,
+    CommentDTOToJSON,
     CreateMessageDTO,
     CreateMessageDTOFromJSON,
     CreateMessageDTOToJSON,
@@ -24,6 +27,9 @@ import {
     MakeVoteDTO,
     MakeVoteDTOFromJSON,
     MakeVoteDTOToJSON,
+    RantDTO,
+    RantDTOFromJSON,
+    RantDTOToJSON,
 } from '../models';
 
 export interface RantControllerCommentOnRantRequest {
@@ -82,7 +88,7 @@ export class RantingApi extends runtime.BaseAPI {
 
     /**
      */
-    async rantControllerCommentOnRantRaw(requestParameters: RantControllerCommentOnRantRequest): Promise<runtime.ApiResponse<void>> {
+    async rantControllerCommentOnRantRaw(requestParameters: RantControllerCommentOnRantRequest): Promise<runtime.ApiResponse<RantDTO>> {
         if (requestParameters.uuid === null || requestParameters.uuid === undefined) {
             throw new runtime.RequiredError('uuid','Required parameter requestParameters.uuid was null or undefined when calling rantControllerCommentOnRant.');
         }
@@ -136,18 +142,19 @@ export class RantingApi extends runtime.BaseAPI {
             body: formParams,
         });
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => RantDTOFromJSON(jsonValue));
     }
 
     /**
      */
-    async rantControllerCommentOnRant(requestParameters: RantControllerCommentOnRantRequest): Promise<void> {
-        await this.rantControllerCommentOnRantRaw(requestParameters);
+    async rantControllerCommentOnRant(requestParameters: RantControllerCommentOnRantRequest): Promise<RantDTO> {
+        const response = await this.rantControllerCommentOnRantRaw(requestParameters);
+        return await response.value();
     }
 
     /**
      */
-    async rantControllerCreateRantRaw(requestParameters: RantControllerCreateRantRequest): Promise<runtime.ApiResponse<void>> {
+    async rantControllerCreateRantRaw(requestParameters: RantControllerCreateRantRequest): Promise<runtime.ApiResponse<RantDTO>> {
         if (requestParameters.content === null || requestParameters.content === undefined) {
             throw new runtime.RequiredError('content','Required parameter requestParameters.content was null or undefined when calling rantControllerCreateRant.');
         }
@@ -205,18 +212,19 @@ export class RantingApi extends runtime.BaseAPI {
             body: formParams,
         });
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => RantDTOFromJSON(jsonValue));
     }
 
     /**
      */
-    async rantControllerCreateRant(requestParameters: RantControllerCreateRantRequest): Promise<void> {
-        await this.rantControllerCreateRantRaw(requestParameters);
+    async rantControllerCreateRant(requestParameters: RantControllerCreateRantRequest): Promise<RantDTO> {
+        const response = await this.rantControllerCreateRantRaw(requestParameters);
+        return await response.value();
     }
 
     /**
      */
-    async rantControllerGetRantRaw(requestParameters: RantControllerGetRantRequest): Promise<runtime.ApiResponse<void>> {
+    async rantControllerGetRantRaw(requestParameters: RantControllerGetRantRequest): Promise<runtime.ApiResponse<RantDTO>> {
         if (requestParameters.uuid === null || requestParameters.uuid === undefined) {
             throw new runtime.RequiredError('uuid','Required parameter requestParameters.uuid was null or undefined when calling rantControllerGetRant.');
         }
@@ -232,18 +240,19 @@ export class RantingApi extends runtime.BaseAPI {
             query: queryParameters,
         });
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => RantDTOFromJSON(jsonValue));
     }
 
     /**
      */
-    async rantControllerGetRant(requestParameters: RantControllerGetRantRequest): Promise<void> {
-        await this.rantControllerGetRantRaw(requestParameters);
+    async rantControllerGetRant(requestParameters: RantControllerGetRantRequest): Promise<RantDTO> {
+        const response = await this.rantControllerGetRantRaw(requestParameters);
+        return await response.value();
     }
 
     /**
      */
-    async rantControllerGetRantCommentsRaw(requestParameters: RantControllerGetRantCommentsRequest): Promise<runtime.ApiResponse<void>> {
+    async rantControllerGetRantCommentsRaw(requestParameters: RantControllerGetRantCommentsRequest): Promise<runtime.ApiResponse<Array<CommentDTO>>> {
         if (requestParameters.uuid === null || requestParameters.uuid === undefined) {
             throw new runtime.RequiredError('uuid','Required parameter requestParameters.uuid was null or undefined when calling rantControllerGetRantComments.');
         }
@@ -259,13 +268,14 @@ export class RantingApi extends runtime.BaseAPI {
             query: queryParameters,
         });
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(CommentDTOFromJSON));
     }
 
     /**
      */
-    async rantControllerGetRantComments(requestParameters: RantControllerGetRantCommentsRequest): Promise<void> {
-        await this.rantControllerGetRantCommentsRaw(requestParameters);
+    async rantControllerGetRantComments(requestParameters: RantControllerGetRantCommentsRequest): Promise<Array<CommentDTO>> {
+        const response = await this.rantControllerGetRantCommentsRaw(requestParameters);
+        return await response.value();
     }
 
     /**
@@ -424,7 +434,7 @@ export class RantingApi extends runtime.BaseAPI {
 
     /**
      */
-    async rantControllerVoteOnCommentRaw(requestParameters: RantControllerVoteOnCommentRequest): Promise<runtime.ApiResponse<void>> {
+    async rantControllerVoteOnCommentRaw(requestParameters: RantControllerVoteOnCommentRequest): Promise<runtime.ApiResponse<RantDTO>> {
         if (requestParameters.uuid === null || requestParameters.uuid === undefined) {
             throw new runtime.RequiredError('uuid','Required parameter requestParameters.uuid was null or undefined when calling rantControllerVoteOnComment.');
         }
@@ -459,18 +469,19 @@ export class RantingApi extends runtime.BaseAPI {
             body: MakeVoteDTOToJSON(requestParameters.makeVoteDTO),
         });
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => RantDTOFromJSON(jsonValue));
     }
 
     /**
      */
-    async rantControllerVoteOnComment(requestParameters: RantControllerVoteOnCommentRequest): Promise<void> {
-        await this.rantControllerVoteOnCommentRaw(requestParameters);
+    async rantControllerVoteOnComment(requestParameters: RantControllerVoteOnCommentRequest): Promise<RantDTO> {
+        const response = await this.rantControllerVoteOnCommentRaw(requestParameters);
+        return await response.value();
     }
 
     /**
      */
-    async rantControllerVoteOnRantRaw(requestParameters: RantControllerVoteOnRantRequest): Promise<runtime.ApiResponse<void>> {
+    async rantControllerVoteOnRantRaw(requestParameters: RantControllerVoteOnRantRequest): Promise<runtime.ApiResponse<RantDTO>> {
         if (requestParameters.uuid === null || requestParameters.uuid === undefined) {
             throw new runtime.RequiredError('uuid','Required parameter requestParameters.uuid was null or undefined when calling rantControllerVoteOnRant.');
         }
@@ -501,13 +512,14 @@ export class RantingApi extends runtime.BaseAPI {
             body: MakeVoteDTOToJSON(requestParameters.makeVoteDTO),
         });
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => RantDTOFromJSON(jsonValue));
     }
 
     /**
      */
-    async rantControllerVoteOnRant(requestParameters: RantControllerVoteOnRantRequest): Promise<void> {
-        await this.rantControllerVoteOnRantRaw(requestParameters);
+    async rantControllerVoteOnRant(requestParameters: RantControllerVoteOnRantRequest): Promise<RantDTO> {
+        const response = await this.rantControllerVoteOnRantRaw(requestParameters);
+        return await response.value();
     }
 
 }

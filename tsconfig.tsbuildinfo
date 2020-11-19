@@ -146,6 +146,16 @@
         "signature": "7a0771740481cdc35fd4f9b0d9cd20bbda76e151cfaad04c26d6fa753561aa0d",
         "affectsGlobalScope": false
       },
+      "./src/models/AssetDTO.ts": {
+        "version": "5b233a029bf455844ff28d47a3796ae40f05ee713956177160c953c0163fb79c",
+        "signature": "28bd0b8a5f0f961dfada539eb5b0c66d22c3d85a1c3e96c49a147e41bc2ec690",
+        "affectsGlobalScope": false
+      },
+      "./src/models/CommentDTO.ts": {
+        "version": "798b313467428940077afb6863e2651f4716f5fdc32fd22d639b6ad3bf274764",
+        "signature": "b186917f4d2286871b01ac813e5596f88a968a29c5a5d5351d303fdf4210cbde",
+        "affectsGlobalScope": false
+      },
       "./src/models/CreateMessageDTO.ts": {
         "version": "99bbb3925a52343fdefaea28dc9df080a74819f01f088eeb6e8c98d6979fcf97",
         "signature": "41c3fe291ab14a8294bab8201295069fe34b8790ea48e59479ab185ef5157afe",
@@ -166,9 +176,24 @@
         "signature": "884e5bd6395dcd628862c14f11a617d2867ec26aa92b833a4ef38027539967c8",
         "affectsGlobalScope": false
       },
+      "./src/models/FeedDTO.ts": {
+        "version": "842d2ef4a5cf2d924732fe707a43ee6e354c625de7b2a7f25565f1f719bc8feb",
+        "signature": "53094e97db0fd3f543fd63f068b413643d3966e996a40832db01e9e38ce9f6c7",
+        "affectsGlobalScope": false
+      },
       "./src/models/MakeVoteDTO.ts": {
         "version": "100df966070df30d0062e1e45c8005cc2ad0958c162ec28bacfe662a4b2eab5a",
         "signature": "57a7f53fd6fa60af8b2b05f63c896c82fdc19176b20eaeffc3c4e247ef8d40b8",
+        "affectsGlobalScope": false
+      },
+      "./src/models/NewsDTO.ts": {
+        "version": "d4295abef53725aabe23b6dc99f8896928616a4fadca56dee305477a08079ad9",
+        "signature": "27d72e2a5f6fd1edc2919e632737b0395da7587ef47cbe8e8ff7eb9be2f3baa6",
+        "affectsGlobalScope": false
+      },
+      "./src/models/RantDTO.ts": {
+        "version": "116ac21798923121158cb97d6d90166e80c3200e311a9414bfcae98955b72fc1",
+        "signature": "beaf63638b9b0d824e29598a2b3027b7e78a41ad716871b1b411c4a36087ab57",
         "affectsGlobalScope": false
       },
       "./src/models/UserRegistration.ts": {
@@ -177,13 +202,13 @@
         "affectsGlobalScope": false
       },
       "./src/models/index.ts": {
-        "version": "ac5920c6c073da703cec77e0c28a90012ff126e73160e247d3c7874424e9de9e",
-        "signature": "989899fba4fa851e5032a8a8534d4ee4a9d455c33bd942e4d464d4be7a775832",
+        "version": "2eb20dbf96bb050317e6c6807683f7adf267aac851cb3015868f30925d8ac0f7",
+        "signature": "416b8e4bddeee4ae1ef10c835a6562e523c10b546a6fc6db3d5d0b8114b083e9",
         "affectsGlobalScope": false
       },
       "./src/apis/DefaultApi.ts": {
-        "version": "41003d9a2c0abd710fff148c2860660f5011e19d3fcff1ecdcb3bc405d19df9c",
-        "signature": "570a77df3675c349d932eecb1d670678523b49fb9386fa6e422830d9c6ee92dd",
+        "version": "1bf68e1e207643a2d6f874307780f0ae998a861ed391b13c08b5d8280a4e3c75",
+        "signature": "3e9eb1050d831d6bfd03232037fbe330f6d217fdf089d07cd5c54c338f4f1b1f",
         "affectsGlobalScope": false
       },
       "./src/apis/NewsApi.ts": {
@@ -192,8 +217,8 @@
         "affectsGlobalScope": false
       },
       "./src/apis/RantingApi.ts": {
-        "version": "09b8061a0dff545fb0af89b6352b2103b0d04b864f56a153181c5de87701a2d5",
-        "signature": "d582f5d19802213346bd8a541dedbbe6ab3ac8e6be08b3ef8c30c8c579e92128",
+        "version": "9d9fb8fb77ca163308abfb68e724692433db2fbe6d88ab22cab05315fa1b078e",
+        "signature": "e7f34b92ae82e9849d27324db345ea292764ff7e6b4c3017d5c6167d1e970baa",
         "affectsGlobalScope": false
       },
       "./src/apis/index.ts": {
@@ -675,6 +700,13 @@
         "./src/models/index.ts",
         "./src/runtime.ts"
       ],
+      "./src/models/AssetDTO.ts": [
+        "./src/runtime.ts"
+      ],
+      "./src/models/CommentDTO.ts": [
+        "./src/models/index.ts",
+        "./src/runtime.ts"
+      ],
       "./src/models/CreateMessageDTO.ts": [
         "./src/runtime.ts"
       ],
@@ -687,18 +719,34 @@
       "./src/models/Credentials.ts": [
         "./src/runtime.ts"
       ],
+      "./src/models/FeedDTO.ts": [
+        "./src/models/index.ts",
+        "./src/runtime.ts"
+      ],
       "./src/models/MakeVoteDTO.ts": [
+        "./src/runtime.ts"
+      ],
+      "./src/models/NewsDTO.ts": [
+        "./src/runtime.ts"
+      ],
+      "./src/models/RantDTO.ts": [
+        "./src/models/index.ts",
         "./src/runtime.ts"
       ],
       "./src/models/UserRegistration.ts": [
         "./src/runtime.ts"
       ],
       "./src/models/index.ts": [
+        "./src/models/AssetDTO.ts",
+        "./src/models/CommentDTO.ts",
         "./src/models/CreateMessageDTO.ts",
         "./src/models/CreateNews.ts",
         "./src/models/CreateRantDTO.ts",
         "./src/models/Credentials.ts",
+        "./src/models/FeedDTO.ts",
         "./src/models/MakeVoteDTO.ts",
+        "./src/models/NewsDTO.ts",
+        "./src/models/RantDTO.ts",
         "./src/models/UserRegistration.ts"
       ]
     },
@@ -896,12 +944,26 @@
         "./src/models/index.ts",
         "./src/runtime.ts"
       ],
+      "./src/models/CommentDTO.ts": [
+        "./src/models/index.ts"
+      ],
+      "./src/models/FeedDTO.ts": [
+        "./src/models/index.ts"
+      ],
+      "./src/models/RantDTO.ts": [
+        "./src/models/index.ts"
+      ],
       "./src/models/index.ts": [
+        "./src/models/AssetDTO.ts",
+        "./src/models/CommentDTO.ts",
         "./src/models/CreateMessageDTO.ts",
         "./src/models/CreateNews.ts",
         "./src/models/CreateRantDTO.ts",
         "./src/models/Credentials.ts",
+        "./src/models/FeedDTO.ts",
         "./src/models/MakeVoteDTO.ts",
+        "./src/models/NewsDTO.ts",
+        "./src/models/RantDTO.ts",
         "./src/models/UserRegistration.ts"
       ]
     },
@@ -987,11 +1049,16 @@
       "./src/apis/RantingApi.ts",
       "./src/apis/index.ts",
       "./src/index.ts",
+      "./src/models/AssetDTO.ts",
+      "./src/models/CommentDTO.ts",
       "./src/models/CreateMessageDTO.ts",
       "./src/models/CreateNews.ts",
       "./src/models/CreateRantDTO.ts",
       "./src/models/Credentials.ts",
+      "./src/models/FeedDTO.ts",
       "./src/models/MakeVoteDTO.ts",
+      "./src/models/NewsDTO.ts",
+      "./src/models/RantDTO.ts",
       "./src/models/UserRegistration.ts",
       "./src/models/index.ts",
       "./src/runtime.ts",

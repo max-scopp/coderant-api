@@ -18,6 +18,9 @@ import {
     Credentials,
     CredentialsFromJSON,
     CredentialsToJSON,
+    FeedDTO,
+    FeedDTOFromJSON,
+    FeedDTOToJSON,
     UserRegistration,
     UserRegistrationFromJSON,
     UserRegistrationToJSON,
@@ -101,7 +104,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
     /**
      */
-    async feedControllerGetAlgoFeedRaw(requestParameters: FeedControllerGetAlgoFeedRequest): Promise<runtime.ApiResponse<void>> {
+    async feedControllerGetAlgoFeedRaw(requestParameters: FeedControllerGetAlgoFeedRequest): Promise<runtime.ApiResponse<FeedDTO>> {
         const queryParameters: runtime.HTTPQuery = {};
 
         if (requestParameters.limit !== undefined) {
@@ -129,18 +132,19 @@ export class DefaultApi extends runtime.BaseAPI {
             query: queryParameters,
         });
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => FeedDTOFromJSON(jsonValue));
     }
 
     /**
      */
-    async feedControllerGetAlgoFeed(requestParameters: FeedControllerGetAlgoFeedRequest): Promise<void> {
-        await this.feedControllerGetAlgoFeedRaw(requestParameters);
+    async feedControllerGetAlgoFeed(requestParameters: FeedControllerGetAlgoFeedRequest): Promise<FeedDTO> {
+        const response = await this.feedControllerGetAlgoFeedRaw(requestParameters);
+        return await response.value();
     }
 
     /**
      */
-    async feedControllerGetRecentFeedRaw(requestParameters: FeedControllerGetRecentFeedRequest): Promise<runtime.ApiResponse<void>> {
+    async feedControllerGetRecentFeedRaw(requestParameters: FeedControllerGetRecentFeedRequest): Promise<runtime.ApiResponse<FeedDTO>> {
         const queryParameters: runtime.HTTPQuery = {};
 
         if (requestParameters.limit !== undefined) {
@@ -168,18 +172,19 @@ export class DefaultApi extends runtime.BaseAPI {
             query: queryParameters,
         });
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => FeedDTOFromJSON(jsonValue));
     }
 
     /**
      */
-    async feedControllerGetRecentFeed(requestParameters: FeedControllerGetRecentFeedRequest): Promise<void> {
-        await this.feedControllerGetRecentFeedRaw(requestParameters);
+    async feedControllerGetRecentFeed(requestParameters: FeedControllerGetRecentFeedRequest): Promise<FeedDTO> {
+        const response = await this.feedControllerGetRecentFeedRaw(requestParameters);
+        return await response.value();
     }
 
     /**
      */
-    async feedControllerGetTopFeedRaw(requestParameters: FeedControllerGetTopFeedRequest): Promise<runtime.ApiResponse<void>> {
+    async feedControllerGetTopFeedRaw(requestParameters: FeedControllerGetTopFeedRequest): Promise<runtime.ApiResponse<FeedDTO>> {
         const queryParameters: runtime.HTTPQuery = {};
 
         if (requestParameters.limit !== undefined) {
@@ -207,13 +212,14 @@ export class DefaultApi extends runtime.BaseAPI {
             query: queryParameters,
         });
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => FeedDTOFromJSON(jsonValue));
     }
 
     /**
      */
-    async feedControllerGetTopFeed(requestParameters: FeedControllerGetTopFeedRequest): Promise<void> {
-        await this.feedControllerGetTopFeedRaw(requestParameters);
+    async feedControllerGetTopFeed(requestParameters: FeedControllerGetTopFeedRequest): Promise<FeedDTO> {
+        const response = await this.feedControllerGetTopFeedRaw(requestParameters);
+        return await response.value();
     }
 
     /**
