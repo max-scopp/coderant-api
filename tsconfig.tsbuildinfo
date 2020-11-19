@@ -141,105 +141,110 @@
         "signature": "89bf2b7a601b73ea4311eda9c41f86a58994fec1bee3b87c4a14d68d9adcdcbd",
         "affectsGlobalScope": true
       },
-      "./src/runtime.ts": {
+      "./src/types/index.d.ts": {
+        "version": "9e5c91d446ccee37e61d8799c39edbf30c687a005f77a0033c71ae1b0205dd26",
+        "signature": "9e5c91d446ccee37e61d8799c39edbf30c687a005f77a0033c71ae1b0205dd26",
+        "affectsGlobalScope": false
+      },
+      "./src/api/runtime.ts": {
         "version": "0f427ee60542fe320646787e090f91eec553527a4f45dfc0f05e88a07de065e3",
         "signature": "7a0771740481cdc35fd4f9b0d9cd20bbda76e151cfaad04c26d6fa753561aa0d",
         "affectsGlobalScope": false
       },
-      "./src/models/AssetDTO.ts": {
+      "./src/api/models/AssetDTO.ts": {
         "version": "5b233a029bf455844ff28d47a3796ae40f05ee713956177160c953c0163fb79c",
         "signature": "28bd0b8a5f0f961dfada539eb5b0c66d22c3d85a1c3e96c49a147e41bc2ec690",
         "affectsGlobalScope": false
       },
-      "./src/models/CommentDTO.ts": {
+      "./src/api/models/CommentDTO.ts": {
         "version": "798b313467428940077afb6863e2651f4716f5fdc32fd22d639b6ad3bf274764",
         "signature": "b186917f4d2286871b01ac813e5596f88a968a29c5a5d5351d303fdf4210cbde",
         "affectsGlobalScope": false
       },
-      "./src/models/CreateMessageDTO.ts": {
+      "./src/api/models/CreateMessageDTO.ts": {
         "version": "99bbb3925a52343fdefaea28dc9df080a74819f01f088eeb6e8c98d6979fcf97",
         "signature": "41c3fe291ab14a8294bab8201295069fe34b8790ea48e59479ab185ef5157afe",
         "affectsGlobalScope": false
       },
-      "./src/models/CreateNews.ts": {
+      "./src/api/models/CreateNews.ts": {
         "version": "8e3ec2b95b44fdefda22c4a24b020f22e94526b2f604c9c7e90ef4da17c9eee3",
         "signature": "29b12af624497b21f49188a054e774ac420b2dd118353725b7e45c2257eac57a",
         "affectsGlobalScope": false
       },
-      "./src/models/CreateRantDTO.ts": {
+      "./src/api/models/CreateRantDTO.ts": {
         "version": "445615151a631d04bf33673dd0559f4b94a739c2e514404995e3de4c55af7ac6",
         "signature": "d0dbd142f6ade3a8b4c65514d1a9ece5d3b0861c2d42d42fe57525ec60ced545",
         "affectsGlobalScope": false
       },
-      "./src/models/Credentials.ts": {
+      "./src/api/models/Credentials.ts": {
         "version": "b4147b34ba1fc89780924cc303c2aacdca812fdb7b171c6d68c2806348626164",
         "signature": "884e5bd6395dcd628862c14f11a617d2867ec26aa92b833a4ef38027539967c8",
         "affectsGlobalScope": false
       },
-      "./src/models/FeedDTO.ts": {
-        "version": "842d2ef4a5cf2d924732fe707a43ee6e354c625de7b2a7f25565f1f719bc8feb",
-        "signature": "53094e97db0fd3f543fd63f068b413643d3966e996a40832db01e9e38ce9f6c7",
+      "./src/api/models/FeedDTO.ts": {
+        "version": "bc12a030cfca9f48d33726828adb1659adcd4dd875b67802cad8932e50383f32",
+        "signature": "ab736473355c340309110c0b4ef6910a1165130341448ce62ddc0cb46583f772",
         "affectsGlobalScope": false
       },
-      "./src/models/MakeVoteDTO.ts": {
+      "./src/api/models/MakeVoteDTO.ts": {
         "version": "100df966070df30d0062e1e45c8005cc2ad0958c162ec28bacfe662a4b2eab5a",
         "signature": "57a7f53fd6fa60af8b2b05f63c896c82fdc19176b20eaeffc3c4e247ef8d40b8",
         "affectsGlobalScope": false
       },
-      "./src/models/NewsDTO.ts": {
+      "./src/api/models/NewsDTO.ts": {
         "version": "d4295abef53725aabe23b6dc99f8896928616a4fadca56dee305477a08079ad9",
         "signature": "27d72e2a5f6fd1edc2919e632737b0395da7587ef47cbe8e8ff7eb9be2f3baa6",
         "affectsGlobalScope": false
       },
-      "./src/models/RantDTO.ts": {
-        "version": "116ac21798923121158cb97d6d90166e80c3200e311a9414bfcae98955b72fc1",
-        "signature": "beaf63638b9b0d824e29598a2b3027b7e78a41ad716871b1b411c4a36087ab57",
+      "./src/api/models/RantDTO.ts": {
+        "version": "25ee22fb793113acc926037afb13c6f0b6732d01026002cb52199b87e3515ecf",
+        "signature": "45f39f1a9fda085563507b8715f2696906574b9ab426265a7ea3496982e33da1",
         "affectsGlobalScope": false
       },
-      "./src/models/UserRegistration.ts": {
+      "./src/api/models/UserDTO.ts": {
+        "version": "000d7341f6eb23e8b1f34faf24e0bd7e28e905993314f84dfcc72e49b9b5929b",
+        "signature": "3d8bbf54d54e148251a45518e0bb2a4b0c383dc8c58534b52de0895d467e3f3c",
+        "affectsGlobalScope": false
+      },
+      "./src/api/models/UserRegistration.ts": {
         "version": "7cfe60d8cc351c294f6b6da07be3625f28dc5725265fd1bd8a6d5ef6a79854e2",
         "signature": "764600b6496500f35faac57e16294c76e9cb4997332dca65b0ee815a52df633d",
         "affectsGlobalScope": false
       },
-      "./src/models/index.ts": {
-        "version": "2eb20dbf96bb050317e6c6807683f7adf267aac851cb3015868f30925d8ac0f7",
-        "signature": "416b8e4bddeee4ae1ef10c835a6562e523c10b546a6fc6db3d5d0b8114b083e9",
+      "./src/api/models/index.ts": {
+        "version": "2ea12f28205dda8f870cc59ba93a916179889ccf7c21271bf056842b9b5adb86",
+        "signature": "b3883f11582bc050c89e65f76f3d373757d91f858e17b6ce43999a00f48a5c34",
         "affectsGlobalScope": false
       },
-      "./src/apis/DefaultApi.ts": {
-        "version": "1bf68e1e207643a2d6f874307780f0ae998a861ed391b13c08b5d8280a4e3c75",
-        "signature": "3e9eb1050d831d6bfd03232037fbe330f6d217fdf089d07cd5c54c338f4f1b1f",
+      "./src/api/apis/DefaultApi.ts": {
+        "version": "cca5b2a7440a2c9600e94c0ac92c71f34a543bf1aba653604dc380b6ba402f40",
+        "signature": "dc8b4b1c9828156bc99eb4a0d1d36c69eab68f3c27efd98c1fe278cfbb5fb71e",
         "affectsGlobalScope": false
       },
-      "./src/apis/NewsApi.ts": {
+      "./src/api/apis/NewsApi.ts": {
         "version": "7e82a27706f190addb8d4d1090cf05b2a443056421c05c683a323d11e82cd46b",
         "signature": "b22d5ce55e4e02a1fcc761633323144d2d0c7f612ef43f23da583873e3bd1ada",
         "affectsGlobalScope": false
       },
-      "./src/apis/RantingApi.ts": {
+      "./src/api/apis/RantingApi.ts": {
         "version": "9d9fb8fb77ca163308abfb68e724692433db2fbe6d88ab22cab05315fa1b078e",
         "signature": "e7f34b92ae82e9849d27324db345ea292764ff7e6b4c3017d5c6167d1e970baa",
         "affectsGlobalScope": false
       },
-      "./src/apis/index.ts": {
+      "./src/api/apis/index.ts": {
         "version": "be4382bca61ff3b49907335ffbcd4bc30e8bae3a9c51357e973b7fe30fb83cc4",
         "signature": "9413eb732eb8c665449e875b025033eb624184fa7f7aa468dc4325da76c84cc8",
         "affectsGlobalScope": false
       },
-      "./src/index.ts": {
+      "./src/api/index.ts": {
         "version": "642e0db6c84aab73c970632ff95a404e2fae373f2ce8e2bfade234d41458d72f",
         "signature": "0732676a8041660f63e075459e97a8411bfdf30a812aae5e2af12cb58fa0b112",
         "affectsGlobalScope": false
       },
-      "./src/apis/AdminApi.ts": {
-        "version": "5420a96cf27cd2dffa4276472ff6b68e525be7f2d87ea56acec450c65a1f9394",
-        "signature": "bb139cadd5db4b660b65d11b2da3c4bc7802de1b05fc49dbb0790df31a2a59ee",
+      "./src/index.ts": {
+        "version": "93ea65fbb7c3e33000eb02a8cda3411863b9a3ff3b616bb156fff17f89349ea5",
+        "signature": "e15250aa43b46b0385bcd693f2d77d151462c09665fedae5e338734196819545",
         "affectsGlobalScope": false
-      },
-      "./types/index.d.ts": {
-        "version": "22c39ac9bf2f361c4485b3bacbdf500e14dd45a3ec101f2572a8662b4e6d433e",
-        "signature": "22c39ac9bf2f361c4485b3bacbdf500e14dd45a3ec101f2572a8662b4e6d433e",
-        "affectsGlobalScope": true
       },
       "./node_modules/@types/node/globals.d.ts": {
         "version": "1332704d6761c94b85753fc3cadc36109f53e5d92fad137ac3de18083febedf3",
@@ -500,7 +505,7 @@
       "rootDir": "./src",
       "outDir": "./lib",
       "typeRoots": [
-        "./types",
+        "./src/types",
         "./node_modules/@types"
       ],
       "project": "./",
@@ -674,80 +679,84 @@
       "./node_modules/@types/node/zlib.d.ts": [
         "./node_modules/@types/node/stream.d.ts"
       ],
-      "./src/apis/AdminApi.ts": [
-        "./src/models/index.ts",
-        "./src/runtime.ts"
+      "./src/api/apis/DefaultApi.ts": [
+        "./src/api/models/index.ts",
+        "./src/api/runtime.ts"
       ],
-      "./src/apis/DefaultApi.ts": [
-        "./src/models/index.ts",
-        "./src/runtime.ts"
+      "./src/api/apis/NewsApi.ts": [
+        "./src/api/models/index.ts",
+        "./src/api/runtime.ts"
       ],
-      "./src/apis/NewsApi.ts": [
-        "./src/models/index.ts",
-        "./src/runtime.ts"
+      "./src/api/apis/RantingApi.ts": [
+        "./src/api/models/index.ts",
+        "./src/api/runtime.ts"
       ],
-      "./src/apis/RantingApi.ts": [
-        "./src/models/index.ts",
-        "./src/runtime.ts"
+      "./src/api/apis/index.ts": [
+        "./src/api/apis/DefaultApi.ts",
+        "./src/api/apis/NewsApi.ts",
+        "./src/api/apis/RantingApi.ts"
       ],
-      "./src/apis/index.ts": [
-        "./src/apis/DefaultApi.ts",
-        "./src/apis/NewsApi.ts",
-        "./src/apis/RantingApi.ts"
+      "./src/api/index.ts": [
+        "./src/api/apis/index.ts",
+        "./src/api/models/index.ts",
+        "./src/api/runtime.ts"
+      ],
+      "./src/api/models/AssetDTO.ts": [
+        "./src/api/runtime.ts"
+      ],
+      "./src/api/models/CommentDTO.ts": [
+        "./src/api/models/index.ts",
+        "./src/api/runtime.ts"
+      ],
+      "./src/api/models/CreateMessageDTO.ts": [
+        "./src/api/runtime.ts"
+      ],
+      "./src/api/models/CreateNews.ts": [
+        "./src/api/runtime.ts"
+      ],
+      "./src/api/models/CreateRantDTO.ts": [
+        "./src/api/runtime.ts"
+      ],
+      "./src/api/models/Credentials.ts": [
+        "./src/api/runtime.ts"
+      ],
+      "./src/api/models/FeedDTO.ts": [
+        "./src/api/models/index.ts",
+        "./src/api/runtime.ts"
+      ],
+      "./src/api/models/MakeVoteDTO.ts": [
+        "./src/api/runtime.ts"
+      ],
+      "./src/api/models/NewsDTO.ts": [
+        "./src/api/runtime.ts"
+      ],
+      "./src/api/models/RantDTO.ts": [
+        "./src/api/models/index.ts",
+        "./src/api/runtime.ts"
+      ],
+      "./src/api/models/UserDTO.ts": [
+        "./src/api/runtime.ts"
+      ],
+      "./src/api/models/UserRegistration.ts": [
+        "./src/api/runtime.ts"
+      ],
+      "./src/api/models/index.ts": [
+        "./src/api/models/AssetDTO.ts",
+        "./src/api/models/CommentDTO.ts",
+        "./src/api/models/CreateMessageDTO.ts",
+        "./src/api/models/CreateNews.ts",
+        "./src/api/models/CreateRantDTO.ts",
+        "./src/api/models/Credentials.ts",
+        "./src/api/models/FeedDTO.ts",
+        "./src/api/models/MakeVoteDTO.ts",
+        "./src/api/models/NewsDTO.ts",
+        "./src/api/models/RantDTO.ts",
+        "./src/api/models/UserDTO.ts",
+        "./src/api/models/UserRegistration.ts"
       ],
       "./src/index.ts": [
-        "./src/apis/index.ts",
-        "./src/models/index.ts",
-        "./src/runtime.ts"
-      ],
-      "./src/models/AssetDTO.ts": [
-        "./src/runtime.ts"
-      ],
-      "./src/models/CommentDTO.ts": [
-        "./src/models/index.ts",
-        "./src/runtime.ts"
-      ],
-      "./src/models/CreateMessageDTO.ts": [
-        "./src/runtime.ts"
-      ],
-      "./src/models/CreateNews.ts": [
-        "./src/runtime.ts"
-      ],
-      "./src/models/CreateRantDTO.ts": [
-        "./src/runtime.ts"
-      ],
-      "./src/models/Credentials.ts": [
-        "./src/runtime.ts"
-      ],
-      "./src/models/FeedDTO.ts": [
-        "./src/models/index.ts",
-        "./src/runtime.ts"
-      ],
-      "./src/models/MakeVoteDTO.ts": [
-        "./src/runtime.ts"
-      ],
-      "./src/models/NewsDTO.ts": [
-        "./src/runtime.ts"
-      ],
-      "./src/models/RantDTO.ts": [
-        "./src/models/index.ts",
-        "./src/runtime.ts"
-      ],
-      "./src/models/UserRegistration.ts": [
-        "./src/runtime.ts"
-      ],
-      "./src/models/index.ts": [
-        "./src/models/AssetDTO.ts",
-        "./src/models/CommentDTO.ts",
-        "./src/models/CreateMessageDTO.ts",
-        "./src/models/CreateNews.ts",
-        "./src/models/CreateRantDTO.ts",
-        "./src/models/Credentials.ts",
-        "./src/models/FeedDTO.ts",
-        "./src/models/MakeVoteDTO.ts",
-        "./src/models/NewsDTO.ts",
-        "./src/models/RantDTO.ts",
-        "./src/models/UserRegistration.ts"
+        "./src/api/index.ts",
+        "./src/types/index.d.ts"
       ]
     },
     "exportedModulesMap": {
@@ -918,53 +927,54 @@
       "./node_modules/@types/node/zlib.d.ts": [
         "./node_modules/@types/node/stream.d.ts"
       ],
-      "./src/apis/AdminApi.ts": [
-        "./src/models/index.ts",
-        "./src/runtime.ts"
+      "./src/api/apis/DefaultApi.ts": [
+        "./src/api/models/index.ts",
+        "./src/api/runtime.ts"
       ],
-      "./src/apis/DefaultApi.ts": [
-        "./src/models/index.ts",
-        "./src/runtime.ts"
+      "./src/api/apis/NewsApi.ts": [
+        "./src/api/models/index.ts",
+        "./src/api/runtime.ts"
       ],
-      "./src/apis/NewsApi.ts": [
-        "./src/models/index.ts",
-        "./src/runtime.ts"
+      "./src/api/apis/RantingApi.ts": [
+        "./src/api/models/index.ts",
+        "./src/api/runtime.ts"
       ],
-      "./src/apis/RantingApi.ts": [
-        "./src/models/index.ts",
-        "./src/runtime.ts"
+      "./src/api/apis/index.ts": [
+        "./src/api/apis/DefaultApi.ts",
+        "./src/api/apis/NewsApi.ts",
+        "./src/api/apis/RantingApi.ts"
       ],
-      "./src/apis/index.ts": [
-        "./src/apis/DefaultApi.ts",
-        "./src/apis/NewsApi.ts",
-        "./src/apis/RantingApi.ts"
+      "./src/api/index.ts": [
+        "./src/api/apis/index.ts",
+        "./src/api/models/index.ts",
+        "./src/api/runtime.ts"
+      ],
+      "./src/api/models/CommentDTO.ts": [
+        "./src/api/models/index.ts"
+      ],
+      "./src/api/models/FeedDTO.ts": [
+        "./src/api/models/index.ts"
+      ],
+      "./src/api/models/RantDTO.ts": [
+        "./src/api/models/index.ts"
+      ],
+      "./src/api/models/index.ts": [
+        "./src/api/models/AssetDTO.ts",
+        "./src/api/models/CommentDTO.ts",
+        "./src/api/models/CreateMessageDTO.ts",
+        "./src/api/models/CreateNews.ts",
+        "./src/api/models/CreateRantDTO.ts",
+        "./src/api/models/Credentials.ts",
+        "./src/api/models/FeedDTO.ts",
+        "./src/api/models/MakeVoteDTO.ts",
+        "./src/api/models/NewsDTO.ts",
+        "./src/api/models/RantDTO.ts",
+        "./src/api/models/UserDTO.ts",
+        "./src/api/models/UserRegistration.ts"
       ],
       "./src/index.ts": [
-        "./src/apis/index.ts",
-        "./src/models/index.ts",
-        "./src/runtime.ts"
-      ],
-      "./src/models/CommentDTO.ts": [
-        "./src/models/index.ts"
-      ],
-      "./src/models/FeedDTO.ts": [
-        "./src/models/index.ts"
-      ],
-      "./src/models/RantDTO.ts": [
-        "./src/models/index.ts"
-      ],
-      "./src/models/index.ts": [
-        "./src/models/AssetDTO.ts",
-        "./src/models/CommentDTO.ts",
-        "./src/models/CreateMessageDTO.ts",
-        "./src/models/CreateNews.ts",
-        "./src/models/CreateRantDTO.ts",
-        "./src/models/Credentials.ts",
-        "./src/models/FeedDTO.ts",
-        "./src/models/MakeVoteDTO.ts",
-        "./src/models/NewsDTO.ts",
-        "./src/models/RantDTO.ts",
-        "./src/models/UserRegistration.ts"
+        "./src/api/index.ts",
+        "./src/types/index.d.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -1043,26 +1053,27 @@
       "./node_modules/@types/node/wasi.d.ts",
       "./node_modules/@types/node/worker_threads.d.ts",
       "./node_modules/@types/node/zlib.d.ts",
-      "./src/apis/AdminApi.ts",
-      "./src/apis/DefaultApi.ts",
-      "./src/apis/NewsApi.ts",
-      "./src/apis/RantingApi.ts",
-      "./src/apis/index.ts",
+      "./src/api/apis/DefaultApi.ts",
+      "./src/api/apis/NewsApi.ts",
+      "./src/api/apis/RantingApi.ts",
+      "./src/api/apis/index.ts",
+      "./src/api/index.ts",
+      "./src/api/models/AssetDTO.ts",
+      "./src/api/models/CommentDTO.ts",
+      "./src/api/models/CreateMessageDTO.ts",
+      "./src/api/models/CreateNews.ts",
+      "./src/api/models/CreateRantDTO.ts",
+      "./src/api/models/Credentials.ts",
+      "./src/api/models/FeedDTO.ts",
+      "./src/api/models/MakeVoteDTO.ts",
+      "./src/api/models/NewsDTO.ts",
+      "./src/api/models/RantDTO.ts",
+      "./src/api/models/UserDTO.ts",
+      "./src/api/models/UserRegistration.ts",
+      "./src/api/models/index.ts",
+      "./src/api/runtime.ts",
       "./src/index.ts",
-      "./src/models/AssetDTO.ts",
-      "./src/models/CommentDTO.ts",
-      "./src/models/CreateMessageDTO.ts",
-      "./src/models/CreateNews.ts",
-      "./src/models/CreateRantDTO.ts",
-      "./src/models/Credentials.ts",
-      "./src/models/FeedDTO.ts",
-      "./src/models/MakeVoteDTO.ts",
-      "./src/models/NewsDTO.ts",
-      "./src/models/RantDTO.ts",
-      "./src/models/UserRegistration.ts",
-      "./src/models/index.ts",
-      "./src/runtime.ts",
-      "./types/index.d.ts"
+      "./src/types/index.d.ts"
     ]
   },
   "version": "4.0.5"

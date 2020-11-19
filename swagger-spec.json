@@ -54,6 +54,77 @@
                     "content"
                 ]
             },
+            "AssetDTO": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "type": "string"
+                    },
+                    "thumbnail": {
+                        "type": "string"
+                    },
+                    "mime": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "url",
+                    "thumbnail",
+                    "mime"
+                ]
+            },
+            "RantDTO": {
+                "type": "object",
+                "properties": {
+                    "uuid": {
+                        "type": "string"
+                    },
+                    "content": {
+                        "type": "string"
+                    },
+                    "asset": {
+                        "$ref": "#/components/schemas/AssetDTO"
+                    },
+                    "votes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "comments": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "owner": {
+                        "type": "string"
+                    },
+                    "updatedAt": {
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "string"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": [
+                    "uuid",
+                    "content",
+                    "asset",
+                    "votes",
+                    "comments",
+                    "owner",
+                    "updatedAt",
+                    "createdAt",
+                    "tags"
+                ]
+            },
             "NewsDTO": {
                 "type": "object",
                 "properties": {
@@ -83,7 +154,7 @@
                     "rants": {
                         "type": "array",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/RantDTO"
                         }
                     },
                     "wrw": {
@@ -120,81 +191,6 @@
                 },
                 "required": [
                     "content",
-                    "tags"
-                ]
-            },
-            "AssetDTO": {
-                "type": "object",
-                "properties": {
-                    "url": {
-                        "type": "string"
-                    },
-                    "thumbnail": {
-                        "type": "string"
-                    },
-                    "mime": {
-                        "type": "string"
-                    }
-                },
-                "required": [
-                    "url",
-                    "thumbnail",
-                    "mime"
-                ]
-            },
-            "UserDTO": {
-                "type": "object",
-                "properties": {}
-            },
-            "RantDTO": {
-                "type": "object",
-                "properties": {
-                    "uuid": {
-                        "type": "string"
-                    },
-                    "content": {
-                        "type": "string"
-                    },
-                    "asset": {
-                        "$ref": "#/components/schemas/AssetDTO"
-                    },
-                    "votes": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "comments": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "owner": {
-                        "$ref": "#/components/schemas/UserDTO"
-                    },
-                    "updatedAt": {
-                        "type": "string"
-                    },
-                    "createdAt": {
-                        "type": "string"
-                    },
-                    "tags": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    }
-                },
-                "required": [
-                    "uuid",
-                    "content",
-                    "asset",
-                    "votes",
-                    "comments",
-                    "owner",
-                    "updatedAt",
-                    "createdAt",
                     "tags"
                 ]
             },
@@ -263,6 +259,52 @@
                 },
                 "required": [
                     "state"
+                ]
+            },
+            "UserDTO": {
+                "type": "object",
+                "properties": {
+                    "uuid": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "social": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "about": {
+                        "type": "string"
+                    },
+                    "skills": {
+                        "type": "string"
+                    },
+                    "location": {
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "string"
+                    },
+                    "supporter": {
+                        "type": "boolean"
+                    },
+                    "moderator": {
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "uuid",
+                    "name",
+                    "social",
+                    "about",
+                    "skills",
+                    "location",
+                    "createdAt",
+                    "supporter",
+                    "moderator"
                 ]
             },
             "UserRegistration": {
@@ -945,7 +987,14 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserDTO"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -965,8 +1014,15 @@
                     }
                 },
                 "responses": {
-                    "201": {
-                        "description": ""
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserDTO"
+                                }
+                            }
+                        }
                     }
                 }
             }

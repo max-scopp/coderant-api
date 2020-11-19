@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run build:fetch && npm run build:source && npm run build:lib",
     "build:lib": "tsc --project .",
-    "build:source": "openapi-generator-cli generate -g typescript-fetch -i ./swagger-spec.json -o src/",
+    "build:source": "openapi-generator-cli generate -g typescript-fetch -i ./swagger-spec.json -o src/api/",
     "build:fetch": "ts-node scripts/fetch-spec.ts",
     "prepublishOnly": "npm run build"
   },

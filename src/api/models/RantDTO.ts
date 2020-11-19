@@ -58,10 +58,10 @@ export interface RantDTO {
     comments: Array<string>;
     /**
      * 
-     * @type {object}
+     * @type {string}
      * @memberof RantDTO
      */
-    owner: object;
+    owner: string;
     /**
      * 
      * @type {string}

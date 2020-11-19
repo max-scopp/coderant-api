@@ -21,6 +21,9 @@ import {
     FeedDTO,
     FeedDTOFromJSON,
     FeedDTOToJSON,
+    UserDTO,
+    UserDTOFromJSON,
+    UserDTOToJSON,
     UserRegistration,
     UserRegistrationFromJSON,
     UserRegistrationToJSON,
@@ -271,7 +274,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
     /**
      */
-    async userControllerCreateUserRaw(requestParameters: UserControllerCreateUserRequest): Promise<runtime.ApiResponse<void>> {
+    async userControllerCreateUserRaw(requestParameters: UserControllerCreateUserRequest): Promise<runtime.ApiResponse<UserDTO>> {
         if (requestParameters.userRegistration === null || requestParameters.userRegistration === undefined) {
             throw new runtime.RequiredError('userRegistration','Required parameter requestParameters.userRegistration was null or undefined when calling userControllerCreateUser.');
         }
@@ -290,18 +293,19 @@ export class DefaultApi extends runtime.BaseAPI {
             body: UserRegistrationToJSON(requestParameters.userRegistration),
         });
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UserDTOFromJSON(jsonValue));
     }
 
     /**
      */
-    async userControllerCreateUser(requestParameters: UserControllerCreateUserRequest): Promise<void> {
-        await this.userControllerCreateUserRaw(requestParameters);
+    async userControllerCreateUser(requestParameters: UserControllerCreateUserRequest): Promise<UserDTO> {
+        const response = await this.userControllerCreateUserRaw(requestParameters);
+        return await response.value();
     }
 
     /**
      */
-    async userControllerGetUserRaw(requestParameters: UserControllerGetUserRequest): Promise<runtime.ApiResponse<void>> {
+    async userControllerGetUserRaw(requestParameters: UserControllerGetUserRequest): Promise<runtime.ApiResponse<UserDTO>> {
         if (requestParameters.uuid === null || requestParameters.uuid === undefined) {
             throw new runtime.RequiredError('uuid','Required parameter requestParameters.uuid was null or undefined when calling userControllerGetUser.');
         }
@@ -317,13 +321,14 @@ export class DefaultApi extends runtime.BaseAPI {
             query: queryParameters,
         });
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UserDTOFromJSON(jsonValue));
     }
 
     /**
      */
-    async userControllerGetUser(requestParameters: UserControllerGetUserRequest): Promise<void> {
-        await this.userControllerGetUserRaw(requestParameters);
+    async userControllerGetUser(requestParameters: UserControllerGetUserRequest): Promise<UserDTO> {
+        const response = await this.userControllerGetUserRaw(requestParameters);
+        return await response.value();
     }
 
 }
