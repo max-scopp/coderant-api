@@ -49,7 +49,13 @@ export interface RantDTO {
      * @type {Array<string>}
      * @memberof RantDTO
      */
-    votes: Array<string>;
+    votes?: Array<string>;
+    /**
+     * 
+     * @type {number}
+     * @memberof RantDTO
+     */
+    score: number;
     /**
      * 
      * @type {Array<string>}
@@ -95,7 +101,8 @@ export function RantDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): R
         'uuid': json['uuid'],
         'content': json['content'],
         'asset': AssetDTOFromJSON(json['asset']),
-        'votes': json['votes'],
+        'votes': !exists(json, 'votes') ? undefined : json['votes'],
+        'score': json['score'],
         'comments': json['comments'],
         'owner': json['owner'],
         'updatedAt': json['updatedAt'],
@@ -117,6 +124,7 @@ export function RantDTOToJSON(value?: RantDTO | null): any {
         'content': value.content,
         'asset': AssetDTOToJSON(value.asset),
         'votes': value.votes,
+        'score': value.score,
         'comments': value.comments,
         'owner': value.owner,
         'updatedAt': value.updatedAt,

@@ -92,6 +92,9 @@
                             "type": "string"
                         }
                     },
+                    "score": {
+                        "type": "number"
+                    },
                     "comments": {
                         "type": "array",
                         "items": {
@@ -118,7 +121,7 @@
                     "uuid",
                     "content",
                     "asset",
-                    "votes",
+                    "score",
                     "comments",
                     "owner",
                     "updatedAt",
