@@ -79,6 +79,12 @@ export interface UserWithTokenDTO {
      * @memberof UserWithTokenDTO
      */
     moderator: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserWithTokenDTO
+     */
+    token: string;
 }
 
 export function UserWithTokenDTOFromJSON(json: any): UserWithTokenDTO {
@@ -101,6 +107,7 @@ export function UserWithTokenDTOFromJSONTyped(json: any, ignoreDiscriminator: bo
         'createdAt': json['createdAt'],
         'supporter': json['supporter'],
         'moderator': json['moderator'],
+        'token': json['token'],
     };
 }
 
@@ -123,6 +130,7 @@ export function UserWithTokenDTOToJSON(value?: UserWithTokenDTO | null): any {
         'createdAt': value.createdAt,
         'supporter': value.supporter,
         'moderator': value.moderator,
+        'token': value.token,
     };
 }
 

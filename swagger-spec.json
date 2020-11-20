@@ -245,6 +245,9 @@
                     },
                     "moderator": {
                         "type": "boolean"
+                    },
+                    "token": {
+                        "type": "string"
                     }
                 },
                 "required": [
@@ -257,7 +260,8 @@
                     "location",
                     "createdAt",
                     "supporter",
-                    "moderator"
+                    "moderator",
+                    "token"
                 ]
             },
             "UserDTO": {
@@ -814,7 +818,7 @@
                     }
                 },
                 "responses": {
-                    "200": {
+                    "201": {
                         "description": "",
                         "content": {
                             "application/json": {
