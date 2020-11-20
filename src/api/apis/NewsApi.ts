@@ -18,6 +18,9 @@ import {
     CreateNews,
     CreateNewsFromJSON,
     CreateNewsToJSON,
+    NewsDTO,
+    NewsDTOFromJSON,
+    NewsDTOToJSON,
 } from '../models';
 
 export interface NewsControllerPostNewsRequest {
@@ -31,7 +34,7 @@ export class NewsApi extends runtime.BaseAPI {
 
     /**
      */
-    async newsControllerGetLatestRaw(): Promise<runtime.ApiResponse<void>> {
+    async newsControllerGetLatestRaw(): Promise<runtime.ApiResponse<NewsDTO>> {
         const queryParameters: runtime.HTTPQuery = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -43,18 +46,19 @@ export class NewsApi extends runtime.BaseAPI {
             query: queryParameters,
         });
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => NewsDTOFromJSON(jsonValue));
     }
 
     /**
      */
-    async newsControllerGetLatest(): Promise<void> {
-        await this.newsControllerGetLatestRaw();
+    async newsControllerGetLatest(): Promise<NewsDTO> {
+        const response = await this.newsControllerGetLatestRaw();
+        return await response.value();
     }
 
     /**
      */
-    async newsControllerPostNewsRaw(requestParameters: NewsControllerPostNewsRequest): Promise<runtime.ApiResponse<void>> {
+    async newsControllerPostNewsRaw(requestParameters: NewsControllerPostNewsRequest): Promise<runtime.ApiResponse<NewsDTO>> {
         if (requestParameters.createNews === null || requestParameters.createNews === undefined) {
             throw new runtime.RequiredError('createNews','Required parameter requestParameters.createNews was null or undefined when calling newsControllerPostNews.');
         }
@@ -81,13 +85,14 @@ export class NewsApi extends runtime.BaseAPI {
             body: CreateNewsToJSON(requestParameters.createNews),
         });
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => NewsDTOFromJSON(jsonValue));
     }
 
     /**
      */
-    async newsControllerPostNews(requestParameters: NewsControllerPostNewsRequest): Promise<void> {
-        await this.newsControllerPostNewsRaw(requestParameters);
+    async newsControllerPostNews(requestParameters: NewsControllerPostNewsRequest): Promise<NewsDTO> {
+        const response = await this.newsControllerPostNewsRaw(requestParameters);
+        return await response.value();
     }
 
 }

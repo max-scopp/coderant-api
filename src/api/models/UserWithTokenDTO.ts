@@ -16,76 +16,76 @@ import { exists, mapValues } from '../runtime';
 /**
  * 
  * @export
- * @interface UserDTO
+ * @interface UserWithTokenDTO
  */
-export interface UserDTO {
+export interface UserWithTokenDTO {
     /**
      * 
      * @type {string}
-     * @memberof UserDTO
+     * @memberof UserWithTokenDTO
      */
     uuid: string;
     /**
      * 
      * @type {string}
-     * @memberof UserDTO
+     * @memberof UserWithTokenDTO
      */
     name: string;
     /**
      * 
      * @type {number}
-     * @memberof UserDTO
+     * @memberof UserWithTokenDTO
      */
     score: number;
     /**
      * 
      * @type {Array<string>}
-     * @memberof UserDTO
+     * @memberof UserWithTokenDTO
      */
     social: Array<string>;
     /**
      * 
      * @type {string}
-     * @memberof UserDTO
+     * @memberof UserWithTokenDTO
      */
     about: string;
     /**
      * 
      * @type {string}
-     * @memberof UserDTO
+     * @memberof UserWithTokenDTO
      */
     skills: string;
     /**
      * 
      * @type {string}
-     * @memberof UserDTO
+     * @memberof UserWithTokenDTO
      */
     location: string;
     /**
      * 
      * @type {string}
-     * @memberof UserDTO
+     * @memberof UserWithTokenDTO
      */
     createdAt: string;
     /**
      * 
      * @type {boolean}
-     * @memberof UserDTO
+     * @memberof UserWithTokenDTO
      */
     supporter: boolean;
     /**
      * 
      * @type {boolean}
-     * @memberof UserDTO
+     * @memberof UserWithTokenDTO
      */
     moderator: boolean;
 }
 
-export function UserDTOFromJSON(json: any): UserDTO {
-    return UserDTOFromJSONTyped(json, false);
+export function UserWithTokenDTOFromJSON(json: any): UserWithTokenDTO {
+    return UserWithTokenDTOFromJSONTyped(json, false);
 }
 
-export function UserDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): UserDTO {
+export function UserWithTokenDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): UserWithTokenDTO {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -104,7 +104,7 @@ export function UserDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): U
     };
 }
 
-export function UserDTOToJSON(value?: UserDTO | null): any {
+export function UserWithTokenDTOToJSON(value?: UserWithTokenDTO | null): any {
     if (value === undefined) {
         return undefined;
     }

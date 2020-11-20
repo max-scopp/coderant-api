@@ -21,15 +21,18 @@ import {
     FeedDTO,
     FeedDTOFromJSON,
     FeedDTOToJSON,
+    SearchResultDTO,
+    SearchResultDTOFromJSON,
+    SearchResultDTOToJSON,
     UserDTO,
     UserDTOFromJSON,
     UserDTOToJSON,
     UserRegistration,
     UserRegistrationFromJSON,
     UserRegistrationToJSON,
-    UserWithToken,
-    UserWithTokenFromJSON,
-    UserWithTokenToJSON,
+    UserWithTokenDTO,
+    UserWithTokenDTOFromJSON,
+    UserWithTokenDTOToJSON,
 } from '../models';
 
 export interface AuthControllerLoginRequest {
@@ -80,7 +83,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
     /**
      */
-    async authControllerLoginRaw(requestParameters: AuthControllerLoginRequest): Promise<runtime.ApiResponse<UserWithToken>> {
+    async authControllerLoginRaw(requestParameters: AuthControllerLoginRequest): Promise<runtime.ApiResponse<UserWithTokenDTO>> {
         if (requestParameters.credentials === null || requestParameters.credentials === undefined) {
             throw new runtime.RequiredError('credentials','Required parameter requestParameters.credentials was null or undefined when calling authControllerLogin.');
         }
@@ -99,12 +102,12 @@ export class DefaultApi extends runtime.BaseAPI {
             body: CredentialsToJSON(requestParameters.credentials),
         });
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => UserWithTokenFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UserWithTokenDTOFromJSON(jsonValue));
     }
 
     /**
      */
-    async authControllerLogin(requestParameters: AuthControllerLoginRequest): Promise<UserWithToken> {
+    async authControllerLogin(requestParameters: AuthControllerLoginRequest): Promise<UserWithTokenDTO> {
         const response = await this.authControllerLoginRaw(requestParameters);
         return await response.value();
     }
@@ -231,7 +234,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
     /**
      */
-    async searchControllerSearchRaw(requestParameters: SearchControllerSearchRequest): Promise<runtime.ApiResponse<void>> {
+    async searchControllerSearchRaw(requestParameters: SearchControllerSearchRequest): Promise<runtime.ApiResponse<SearchResultDTO>> {
         if (requestParameters.query === null || requestParameters.query === undefined) {
             throw new runtime.RequiredError('query','Required parameter requestParameters.query was null or undefined when calling searchControllerSearch.');
         }
@@ -267,13 +270,14 @@ export class DefaultApi extends runtime.BaseAPI {
             query: queryParameters,
         });
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => SearchResultDTOFromJSON(jsonValue));
     }
 
     /**
      */
-    async searchControllerSearch(requestParameters: SearchControllerSearchRequest): Promise<void> {
-        await this.searchControllerSearchRaw(requestParameters);
+    async searchControllerSearch(requestParameters: SearchControllerSearchRequest): Promise<SearchResultDTO> {
+        const response = await this.searchControllerSearchRaw(requestParameters);
+        return await response.value();
     }
 
     /**

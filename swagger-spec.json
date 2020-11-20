@@ -210,7 +210,7 @@
                     "password"
                 ]
             },
-            "UserWithToken": {
+            "UserWithTokenDTO": {
                 "type": "object",
                 "properties": {
                     "uuid": {
@@ -218,6 +218,9 @@
                     },
                     "name": {
                         "type": "string"
+                    },
+                    "score": {
+                        "type": "number"
                     },
                     "social": {
                         "type": "array",
@@ -247,6 +250,7 @@
                 "required": [
                     "uuid",
                     "name",
+                    "score",
                     "social",
                     "about",
                     "skills",
@@ -265,6 +269,9 @@
                     "name": {
                         "type": "string"
                     },
+                    "score": {
+                        "type": "number"
+                    },
                     "social": {
                         "type": "array",
                         "items": {
@@ -293,6 +300,7 @@
                 "required": [
                     "uuid",
                     "name",
+                    "score",
                     "social",
                     "about",
                     "skills",
@@ -387,6 +395,27 @@
                     "rants",
                     "wrw",
                     "news"
+                ]
+            },
+            "SearchResultDTO": {
+                "type": "object",
+                "properties": {
+                    "rants": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "users": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": [
+                    "rants",
+                    "users"
                 ]
             }
         }
@@ -790,7 +819,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/UserWithToken"
+                                    "$ref": "#/components/schemas/UserWithTokenDTO"
                                 }
                             }
                         }
@@ -868,8 +897,15 @@
                     }
                 },
                 "responses": {
-                    "201": {
-                        "description": ""
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewsDTO"
+                                }
+                            }
+                        }
                     }
                 },
                 "tags": [
@@ -888,7 +924,14 @@
                 "parameters": [],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewsDTO"
+                                }
+                            }
+                        }
                     }
                 },
                 "tags": [
@@ -1096,7 +1139,14 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SearchResultDTO"
+                                }
+                            }
+                        }
                     }
                 }
             }

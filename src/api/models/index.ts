@@ -8,6 +8,7 @@ export * from './FeedDTO';
 export * from './MakeVoteDTO';
 export * from './NewsDTO';
 export * from './RantDTO';
+export * from './SearchResultDTO';
 export * from './UserDTO';
 export * from './UserRegistration';
-export * from './UserWithToken';
+export * from './UserWithTokenDTO';

@@ -201,9 +201,14 @@
         "signature": "45f39f1a9fda085563507b8715f2696906574b9ab426265a7ea3496982e33da1",
         "affectsGlobalScope": false
       },
+      "./src/api/models/SearchResultDTO.ts": {
+        "version": "57e2f3025b462d0fb24885aec0f32e6ccd0c64d4c0cfb958ba0bec9ab9910e0c",
+        "signature": "94cdf18969eae071e9edcf20036a6a1884d2a043492bb789881965d8bae6fd35",
+        "affectsGlobalScope": false
+      },
       "./src/api/models/UserDTO.ts": {
-        "version": "000d7341f6eb23e8b1f34faf24e0bd7e28e905993314f84dfcc72e49b9b5929b",
-        "signature": "3d8bbf54d54e148251a45518e0bb2a4b0c383dc8c58534b52de0895d467e3f3c",
+        "version": "10f6804786daa36566da10623bb8708e1858850959e1db88063b144c42a501f7",
+        "signature": "1f599c06244c8bbd5f040bab83fd3d29e4dd87d8dc943d29440c7a2c947c2d6b",
         "affectsGlobalScope": false
       },
       "./src/api/models/UserRegistration.ts": {
@@ -211,24 +216,24 @@
         "signature": "764600b6496500f35faac57e16294c76e9cb4997332dca65b0ee815a52df633d",
         "affectsGlobalScope": false
       },
-      "./src/api/models/UserWithToken.ts": {
-        "version": "66abbfe47533abec59a877796b2d15066f582203aaa19731e9ebec791b3d14c8",
-        "signature": "ead68ea7118d1740d11c84cb3f14ba44b712e5c22760dbbf239051d81d1a5a79",
+      "./src/api/models/UserWithTokenDTO.ts": {
+        "version": "5c292050dcdd99be466a493c6b19c7fbaadf51c0578cc420a657ca5589f9d69b",
+        "signature": "40c47abd25139e45a3329b2497707b6bd52184773608d5f2e5c7e2a0b6276d80",
         "affectsGlobalScope": false
       },
       "./src/api/models/index.ts": {
-        "version": "482f4c19d5473119e7378e6ca4a59363d0bbaeeb9e196c9546f0f3efb6e6994e",
-        "signature": "f0a367689cd96b54c5038a60ee2d1dbf710e80213d60478531c18ca86a2dba55",
+        "version": "087b3f3925f228efc8cad4a66ee4d002cad31727168c7860fd16fa8b4e2e8c88",
+        "signature": "2e5d5203417a3bed7cd03f2d8374816c7b337708222e032058f2efa834acbbc4",
         "affectsGlobalScope": false
       },
       "./src/api/apis/DefaultApi.ts": {
-        "version": "50bfaab7620872250f4385190a437e738d5b9ade3ee9f04591bdc7d49833aa81",
-        "signature": "b178bd6ef4f2e15c7fd46211ff5a674b134ce8c8d568e5e2787dd7a82a92795c",
+        "version": "6aa8cee882bcb2e27e3a7a29771e1093ac39d8b785ff4fb454d3689826a34c3d",
+        "signature": "ec046e0744f2f862258ea2b6168a63ce9b5d4b14683e69181fd2821416d3faaf",
         "affectsGlobalScope": false
       },
       "./src/api/apis/NewsApi.ts": {
-        "version": "7e82a27706f190addb8d4d1090cf05b2a443056421c05c683a323d11e82cd46b",
-        "signature": "b22d5ce55e4e02a1fcc761633323144d2d0c7f612ef43f23da583873e3bd1ada",
+        "version": "4a622fc0d898f65f916fb62a429c9a4929fa1a69be6d0934a3727cd8d320a04c",
+        "signature": "a90bfbe68acccc5b334e11859f4ee690be28d0126ea7148bbb8794a43c586474",
         "affectsGlobalScope": false
       },
       "./src/api/apis/RantingApi.ts": {
@@ -249,6 +254,11 @@
       "./src/index.ts": {
         "version": "bedf3a076f017e77f1dcd10c134bc4bc60b815a302a3dbbee3ab79eb34f11488",
         "signature": "90f1f227de8244a17ed2348439fe0adaf3fa4afa7c489f59c6878febd677bd0f",
+        "affectsGlobalScope": false
+      },
+      "./src/api/models/UserWithToken.ts": {
+        "version": "66abbfe47533abec59a877796b2d15066f582203aaa19731e9ebec791b3d14c8",
+        "signature": "ead68ea7118d1740d11c84cb3f14ba44b712e5c22760dbbf239051d81d1a5a79",
         "affectsGlobalScope": false
       },
       "./node_modules/@types/node/globals.d.ts": {
@@ -735,6 +745,9 @@
         "./src/api/models/index.ts",
         "./src/api/runtime.ts"
       ],
+      "./src/api/models/SearchResultDTO.ts": [
+        "./src/api/runtime.ts"
+      ],
       "./src/api/models/UserDTO.ts": [
         "./src/api/runtime.ts"
       ],
@@ -742,6 +755,9 @@
         "./src/api/runtime.ts"
       ],
       "./src/api/models/UserWithToken.ts": [
+        "./src/api/runtime.ts"
+      ],
+      "./src/api/models/UserWithTokenDTO.ts": [
         "./src/api/runtime.ts"
       ],
       "./src/api/models/index.ts": [
@@ -755,9 +771,10 @@
         "./src/api/models/MakeVoteDTO.ts",
         "./src/api/models/NewsDTO.ts",
         "./src/api/models/RantDTO.ts",
+        "./src/api/models/SearchResultDTO.ts",
         "./src/api/models/UserDTO.ts",
         "./src/api/models/UserRegistration.ts",
-        "./src/api/models/UserWithToken.ts"
+        "./src/api/models/UserWithTokenDTO.ts"
       ],
       "./src/index.ts": [
         "./src/api/index.ts",
@@ -974,9 +991,10 @@
         "./src/api/models/MakeVoteDTO.ts",
         "./src/api/models/NewsDTO.ts",
         "./src/api/models/RantDTO.ts",
+        "./src/api/models/SearchResultDTO.ts",
         "./src/api/models/UserDTO.ts",
         "./src/api/models/UserRegistration.ts",
-        "./src/api/models/UserWithToken.ts"
+        "./src/api/models/UserWithTokenDTO.ts"
       ],
       "./src/index.ts": [
         "./src/api/index.ts",
@@ -1074,9 +1092,11 @@
       "./src/api/models/MakeVoteDTO.ts",
       "./src/api/models/NewsDTO.ts",
       "./src/api/models/RantDTO.ts",
+      "./src/api/models/SearchResultDTO.ts",
       "./src/api/models/UserDTO.ts",
       "./src/api/models/UserRegistration.ts",
       "./src/api/models/UserWithToken.ts",
+      "./src/api/models/UserWithTokenDTO.ts",
       "./src/api/models/index.ts",
       "./src/api/runtime.ts",
       "./src/index.ts",
