@@ -10,3 +10,4 @@ export * from './NewsDTO';
 export * from './RantDTO';
 export * from './UserDTO';
 export * from './UserRegistration';
+export * from './UserWithToken';

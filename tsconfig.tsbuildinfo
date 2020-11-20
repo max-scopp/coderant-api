@@ -211,14 +211,19 @@
         "signature": "764600b6496500f35faac57e16294c76e9cb4997332dca65b0ee815a52df633d",
         "affectsGlobalScope": false
       },
+      "./src/api/models/UserWithToken.ts": {
+        "version": "66abbfe47533abec59a877796b2d15066f582203aaa19731e9ebec791b3d14c8",
+        "signature": "ead68ea7118d1740d11c84cb3f14ba44b712e5c22760dbbf239051d81d1a5a79",
+        "affectsGlobalScope": false
+      },
       "./src/api/models/index.ts": {
-        "version": "2ea12f28205dda8f870cc59ba93a916179889ccf7c21271bf056842b9b5adb86",
-        "signature": "b3883f11582bc050c89e65f76f3d373757d91f858e17b6ce43999a00f48a5c34",
+        "version": "482f4c19d5473119e7378e6ca4a59363d0bbaeeb9e196c9546f0f3efb6e6994e",
+        "signature": "f0a367689cd96b54c5038a60ee2d1dbf710e80213d60478531c18ca86a2dba55",
         "affectsGlobalScope": false
       },
       "./src/api/apis/DefaultApi.ts": {
-        "version": "cca5b2a7440a2c9600e94c0ac92c71f34a543bf1aba653604dc380b6ba402f40",
-        "signature": "dc8b4b1c9828156bc99eb4a0d1d36c69eab68f3c27efd98c1fe278cfbb5fb71e",
+        "version": "50bfaab7620872250f4385190a437e738d5b9ade3ee9f04591bdc7d49833aa81",
+        "signature": "b178bd6ef4f2e15c7fd46211ff5a674b134ce8c8d568e5e2787dd7a82a92795c",
         "affectsGlobalScope": false
       },
       "./src/api/apis/NewsApi.ts": {
@@ -736,6 +741,9 @@
       "./src/api/models/UserRegistration.ts": [
         "./src/api/runtime.ts"
       ],
+      "./src/api/models/UserWithToken.ts": [
+        "./src/api/runtime.ts"
+      ],
       "./src/api/models/index.ts": [
         "./src/api/models/AssetDTO.ts",
         "./src/api/models/CommentDTO.ts",
@@ -748,7 +756,8 @@
         "./src/api/models/NewsDTO.ts",
         "./src/api/models/RantDTO.ts",
         "./src/api/models/UserDTO.ts",
-        "./src/api/models/UserRegistration.ts"
+        "./src/api/models/UserRegistration.ts",
+        "./src/api/models/UserWithToken.ts"
       ],
       "./src/index.ts": [
         "./src/api/index.ts",
@@ -966,7 +975,8 @@
         "./src/api/models/NewsDTO.ts",
         "./src/api/models/RantDTO.ts",
         "./src/api/models/UserDTO.ts",
-        "./src/api/models/UserRegistration.ts"
+        "./src/api/models/UserRegistration.ts",
+        "./src/api/models/UserWithToken.ts"
       ],
       "./src/index.ts": [
         "./src/api/index.ts",
@@ -1066,6 +1076,7 @@
       "./src/api/models/RantDTO.ts",
       "./src/api/models/UserDTO.ts",
       "./src/api/models/UserRegistration.ts",
+      "./src/api/models/UserWithToken.ts",
       "./src/api/models/index.ts",
       "./src/api/runtime.ts",
       "./src/index.ts",

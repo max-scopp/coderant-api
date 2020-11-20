@@ -27,6 +27,9 @@ import {
     UserRegistration,
     UserRegistrationFromJSON,
     UserRegistrationToJSON,
+    UserWithToken,
+    UserWithTokenFromJSON,
+    UserWithTokenToJSON,
 } from '../models';
 
 export interface AuthControllerLoginRequest {
@@ -77,7 +80,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
     /**
      */
-    async authControllerLoginRaw(requestParameters: AuthControllerLoginRequest): Promise<runtime.ApiResponse<void>> {
+    async authControllerLoginRaw(requestParameters: AuthControllerLoginRequest): Promise<runtime.ApiResponse<UserWithToken>> {
         if (requestParameters.credentials === null || requestParameters.credentials === undefined) {
             throw new runtime.RequiredError('credentials','Required parameter requestParameters.credentials was null or undefined when calling authControllerLogin.');
         }
@@ -96,13 +99,14 @@ export class DefaultApi extends runtime.BaseAPI {
             body: CredentialsToJSON(requestParameters.credentials),
         });
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UserWithTokenFromJSON(jsonValue));
     }
 
     /**
      */
-    async authControllerLogin(requestParameters: AuthControllerLoginRequest): Promise<void> {
-        await this.authControllerLoginRaw(requestParameters);
+    async authControllerLogin(requestParameters: AuthControllerLoginRequest): Promise<UserWithToken> {
+        const response = await this.authControllerLoginRaw(requestParameters);
+        return await response.value();
     }
 
     /**

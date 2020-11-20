@@ -31,27 +31,28 @@
             }
         },
         "schemas": {
-            "CreateNews": {
+            "CreateRantDTO": {
                 "type": "object",
                 "properties": {
-                    "type": {
-                        "type": "string"
-                    },
-                    "headline": {
-                        "type": "string"
-                    },
-                    "footer": {
-                        "type": "string"
-                    },
                     "content": {
                         "type": "string"
+                    },
+                    "asset": {
+                        "type": "string",
+                        "format": "binary",
+                        "description": "If sent as `multipart/form-data`, provide a binary file,\nhowever, you cannot sent binary files using `application/json`.\n\nIn that case, you can encode the file as base64, in the following format:\n`data:[<mediatype>][;base64],<data>`\n\nPlease be aware of the limitations of using a base64 file upload.\nThe file limit is calculated BEFORE the base64 file is unpacked."
+                    },
+                    "tags": {
+                        "description": "You can provide tags either comma-seperated or as array directly.\nMake sure to provide at least one of the following tags:\n`INSERT`\n\nOtherwise, the creation will fail.",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 },
                 "required": [
-                    "type",
-                    "headline",
-                    "footer",
-                    "content"
+                    "content",
+                    "tags"
                 ]
             },
             "AssetDTO": {
@@ -125,75 +126,6 @@
                     "tags"
                 ]
             },
-            "NewsDTO": {
-                "type": "object",
-                "properties": {
-                    "type": {
-                        "type": "string"
-                    },
-                    "headline": {
-                        "type": "string"
-                    },
-                    "footer": {
-                        "type": "string"
-                    },
-                    "content": {
-                        "type": "string"
-                    }
-                },
-                "required": [
-                    "type",
-                    "headline",
-                    "footer",
-                    "content"
-                ]
-            },
-            "FeedDTO": {
-                "type": "object",
-                "properties": {
-                    "rants": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/RantDTO"
-                        }
-                    },
-                    "wrw": {
-                        "type": "number"
-                    },
-                    "news": {
-                        "$ref": "#/components/schemas/NewsDTO"
-                    }
-                },
-                "required": [
-                    "rants",
-                    "wrw",
-                    "news"
-                ]
-            },
-            "CreateRantDTO": {
-                "type": "object",
-                "properties": {
-                    "content": {
-                        "type": "string"
-                    },
-                    "asset": {
-                        "type": "string",
-                        "format": "binary",
-                        "description": "If sent as `multipart/form-data`, provide a binary file,\nhowever, you cannot sent binary files using `application/json`.\n\nIn that case, you can encode the file as base64, in the following format:\n`data:[<mediatype>][;base64],<data>`\n\nPlease be aware of the limitations of using a base64 file upload.\nThe file limit is calculated BEFORE the base64 file is unpacked."
-                    },
-                    "tags": {
-                        "description": "You can provide tags either comma-seperated or as array directly.\nMake sure to provide at least one of the following tags:\n`INSERT`\n\nOtherwise, the creation will fail.",
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    }
-                },
-                "required": [
-                    "content",
-                    "tags"
-                ]
-            },
             "CreateMessageDTO": {
                 "type": "object",
                 "properties": {
@@ -261,6 +193,69 @@
                     "state"
                 ]
             },
+            "Credentials": {
+                "type": "object",
+                "properties": {
+                    "username": {
+                        "type": "string",
+                        "example": "local-dev"
+                    },
+                    "password": {
+                        "type": "string",
+                        "example": "password"
+                    }
+                },
+                "required": [
+                    "username",
+                    "password"
+                ]
+            },
+            "UserWithToken": {
+                "type": "object",
+                "properties": {
+                    "uuid": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "social": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "about": {
+                        "type": "string"
+                    },
+                    "skills": {
+                        "type": "string"
+                    },
+                    "location": {
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "string"
+                    },
+                    "supporter": {
+                        "type": "boolean"
+                    },
+                    "moderator": {
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "uuid",
+                    "name",
+                    "social",
+                    "about",
+                    "skills",
+                    "location",
+                    "createdAt",
+                    "supporter",
+                    "moderator"
+                ]
+            },
             "UserDTO": {
                 "type": "object",
                 "properties": {
@@ -326,222 +321,77 @@
                     "password"
                 ]
             },
-            "Credentials": {
+            "CreateNews": {
                 "type": "object",
                 "properties": {
-                    "username": {
-                        "type": "string",
-                        "example": "local-dev"
+                    "type": {
+                        "type": "string"
                     },
-                    "password": {
-                        "type": "string",
-                        "example": "password"
+                    "headline": {
+                        "type": "string"
+                    },
+                    "footer": {
+                        "type": "string"
+                    },
+                    "content": {
+                        "type": "string"
                     }
                 },
                 "required": [
-                    "username",
-                    "password"
+                    "type",
+                    "headline",
+                    "footer",
+                    "content"
+                ]
+            },
+            "NewsDTO": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string"
+                    },
+                    "headline": {
+                        "type": "string"
+                    },
+                    "footer": {
+                        "type": "string"
+                    },
+                    "content": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "type",
+                    "headline",
+                    "footer",
+                    "content"
+                ]
+            },
+            "FeedDTO": {
+                "type": "object",
+                "properties": {
+                    "rants": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/RantDTO"
+                        }
+                    },
+                    "wrw": {
+                        "type": "number"
+                    },
+                    "news": {
+                        "$ref": "#/components/schemas/NewsDTO"
+                    }
+                },
+                "required": [
+                    "rants",
+                    "wrw",
+                    "news"
                 ]
             }
         }
     },
     "paths": {
-        "/news/create": {
-            "post": {
-                "operationId": "NewsController_postNews",
-                "parameters": [],
-                "requestBody": {
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/CreateNews"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "201": {
-                        "description": ""
-                    }
-                },
-                "tags": [
-                    "news"
-                ],
-                "security": [
-                    {
-                        "bearer": []
-                    }
-                ]
-            }
-        },
-        "/news/latest": {
-            "get": {
-                "operationId": "NewsController_getLatest",
-                "parameters": [],
-                "responses": {
-                    "200": {
-                        "description": ""
-                    }
-                },
-                "tags": [
-                    "news"
-                ]
-            }
-        },
-        "/feed/recent": {
-            "get": {
-                "operationId": "FeedController_getRecentFeed",
-                "parameters": [
-                    {
-                        "name": "limit",
-                        "required": false,
-                        "in": "query",
-                        "schema": {
-                            "type": "number"
-                        }
-                    },
-                    {
-                        "name": "offset",
-                        "required": false,
-                        "in": "query",
-                        "schema": {
-                            "type": "number"
-                        }
-                    },
-                    {
-                        "name": "orderBy",
-                        "required": false,
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "orderDir",
-                        "required": false,
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/FeedDTO"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/feed/algo": {
-            "get": {
-                "operationId": "FeedController_getAlgoFeed",
-                "parameters": [
-                    {
-                        "name": "limit",
-                        "required": false,
-                        "in": "query",
-                        "schema": {
-                            "type": "number"
-                        }
-                    },
-                    {
-                        "name": "offset",
-                        "required": false,
-                        "in": "query",
-                        "schema": {
-                            "type": "number"
-                        }
-                    },
-                    {
-                        "name": "orderBy",
-                        "required": false,
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "orderDir",
-                        "required": false,
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/FeedDTO"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/feed/top": {
-            "get": {
-                "operationId": "FeedController_getTopFeed",
-                "parameters": [
-                    {
-                        "name": "limit",
-                        "required": false,
-                        "in": "query",
-                        "schema": {
-                            "type": "number"
-                        }
-                    },
-                    {
-                        "name": "offset",
-                        "required": false,
-                        "in": "query",
-                        "schema": {
-                            "type": "number"
-                        }
-                    },
-                    {
-                        "name": "orderBy",
-                        "required": false,
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "orderDir",
-                        "required": false,
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/FeedDTO"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "/rant": {
             "put": {
                 "operationId": "RantController_createRant",
@@ -920,54 +770,30 @@
                 ]
             }
         },
-        "/search": {
-            "get": {
-                "operationId": "SearchController_search",
-                "parameters": [
-                    {
-                        "name": "query",
-                        "required": true,
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "limit",
-                        "required": false,
-                        "in": "query",
-                        "schema": {
-                            "type": "number"
-                        }
-                    },
-                    {
-                        "name": "offset",
-                        "required": false,
-                        "in": "query",
-                        "schema": {
-                            "type": "number"
-                        }
-                    },
-                    {
-                        "name": "orderBy",
-                        "required": false,
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "orderDir",
-                        "required": false,
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
+        "/auth/login": {
+            "post": {
+                "operationId": "AuthController_login",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Credentials"
+                            }
                         }
                     }
-                ],
+                },
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserWithToken"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -1027,22 +853,249 @@
                 }
             }
         },
-        "/auth/login": {
+        "/news/create": {
             "post": {
-                "operationId": "AuthController_login",
+                "operationId": "NewsController_postNews",
                 "parameters": [],
                 "requestBody": {
                     "required": true,
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/Credentials"
+                                "$ref": "#/components/schemas/CreateNews"
                             }
                         }
                     }
                 },
                 "responses": {
                     "201": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "news"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/news/latest": {
+            "get": {
+                "operationId": "NewsController_getLatest",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "news"
+                ]
+            }
+        },
+        "/feed/recent": {
+            "get": {
+                "operationId": "FeedController_getRecentFeed",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "orderBy",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "orderDir",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FeedDTO"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/feed/algo": {
+            "get": {
+                "operationId": "FeedController_getAlgoFeed",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "orderBy",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "orderDir",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FeedDTO"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/feed/top": {
+            "get": {
+                "operationId": "FeedController_getTopFeed",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "orderBy",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "orderDir",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FeedDTO"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/search": {
+            "get": {
+                "operationId": "SearchController_search",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "required": true,
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "orderBy",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "orderDir",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
                         "description": ""
                     }
                 }
