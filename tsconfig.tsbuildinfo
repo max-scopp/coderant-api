@@ -202,8 +202,8 @@
         "affectsGlobalScope": false
       },
       "./src/api/models/RantInFeedDTO.ts": {
-        "version": "34b81ba0ccb22d5025bdda5dac43795cf279e69c597befc97e686f1355e9cf2b",
-        "signature": "0706a7d11feddd931985eccfb9aa1787de233de73d68adccee92ec30b3f68d99",
+        "version": "a84d3b2746664cbb44f4837a0721bc7c35b6d80088bd6627ae14d2ac72d23d6b",
+        "signature": "4f722e9d16a71fbd647429c122eed75d995000160d632407b3c4763a69b7ebb1",
         "affectsGlobalScope": false
       },
       "./src/api/models/SearchResultDTO.ts": {

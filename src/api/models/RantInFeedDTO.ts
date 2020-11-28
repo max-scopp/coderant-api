@@ -80,6 +80,12 @@ export interface RantInFeedDTO {
      * @memberof RantInFeedDTO
      */
     tags: Array<string>;
+    /**
+     * 
+     * @type {number}
+     * @memberof RantInFeedDTO
+     */
+    userVoteState?: number;
 }
 
 export function RantInFeedDTOFromJSON(json: any): RantInFeedDTO {
@@ -101,6 +107,7 @@ export function RantInFeedDTOFromJSONTyped(json: any, ignoreDiscriminator: boole
         'updatedAt': (new Date(json['updatedAt'])),
         'createdAt': (new Date(json['createdAt'])),
         'tags': json['tags'],
+        'userVoteState': !exists(json, 'userVoteState') ? undefined : json['userVoteState'],
     };
 }
 
@@ -122,6 +129,7 @@ export function RantInFeedDTOToJSON(value?: RantInFeedDTO | null): any {
         'updatedAt': (value.updatedAt.toISOString()),
         'createdAt': (value.createdAt.toISOString()),
         'tags': value.tags,
+        'userVoteState': value.userVoteState,
     };
 }
 
