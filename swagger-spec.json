@@ -639,6 +639,11 @@
                 },
                 "tags": [
                     "ranting"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
                 ]
             }
         },
@@ -786,6 +791,11 @@
                 },
                 "tags": [
                     "ranting"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
                 ]
             }
         },

@@ -247,7 +247,7 @@
         "affectsGlobalScope": false
       },
       "./src/api/apis/RantingApi.ts": {
-        "version": "9d9fb8fb77ca163308abfb68e724692433db2fbe6d88ab22cab05315fa1b078e",
+        "version": "ac95420171d3e051fbb9c31a2bbb48db32d3e1b5ae884c88637b86152a48c4fd",
         "signature": "e7f34b92ae82e9849d27324db345ea292764ff7e6b4c3017d5c6167d1e970baa",
         "affectsGlobalScope": false
       },
