@@ -18,10 +18,10 @@ import {
     NewsDTOFromJSON,
     NewsDTOFromJSONTyped,
     NewsDTOToJSON,
-    RantDTO,
-    RantDTOFromJSON,
-    RantDTOFromJSONTyped,
-    RantDTOToJSON,
+    RantInFeedDTO,
+    RantInFeedDTOFromJSON,
+    RantInFeedDTOFromJSONTyped,
+    RantInFeedDTOToJSON,
 } from './';
 
 /**
@@ -32,10 +32,10 @@ import {
 export interface FeedDTO {
     /**
      * 
-     * @type {Array<RantDTO>}
+     * @type {Array<RantInFeedDTO>}
      * @memberof FeedDTO
      */
-    rants: Array<RantDTO>;
+    rants: Array<RantInFeedDTO>;
     /**
      * 
      * @type {number}
@@ -60,7 +60,7 @@ export function FeedDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): F
     }
     return {
         
-        'rants': ((json['rants'] as Array<any>).map(RantDTOFromJSON)),
+        'rants': ((json['rants'] as Array<any>).map(RantInFeedDTOFromJSON)),
         'wrw': json['wrw'],
         'news': NewsDTOFromJSON(json['news']),
     };
@@ -75,7 +75,7 @@ export function FeedDTOToJSON(value?: FeedDTO | null): any {
     }
     return {
         
-        'rants': ((value.rants as Array<any>).map(RantDTOToJSON)),
+        'rants': ((value.rants as Array<any>).map(RantInFeedDTOToJSON)),
         'wrw': value.wrw,
         'news': NewsDTOToJSON(value.news),
     };

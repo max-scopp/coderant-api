@@ -182,8 +182,8 @@
         "affectsGlobalScope": false
       },
       "./src/api/models/FeedDTO.ts": {
-        "version": "bc12a030cfca9f48d33726828adb1659adcd4dd875b67802cad8932e50383f32",
-        "signature": "ab736473355c340309110c0b4ef6910a1165130341448ce62ddc0cb46583f772",
+        "version": "18a08e9a58bb90277a48c80401f0b97717543599452ac753b84ed946cbf67191",
+        "signature": "06f36d1524d7bbe609427418a1e4542be1cf80715962af4a77d4f6abbb749bd2",
         "affectsGlobalScope": false
       },
       "./src/api/models/MakeVoteDTO.ts": {
@@ -199,6 +199,11 @@
       "./src/api/models/RantDTO.ts": {
         "version": "786096a759438a08d2accc12e55ec99d526466ef0a9b6ab90d1988201d69d132",
         "signature": "17c65860de4877138bdde1bf1fb1198513ef5bd8ca892471a104119933ea66da",
+        "affectsGlobalScope": false
+      },
+      "./src/api/models/RantInFeedDTO.ts": {
+        "version": "34b81ba0ccb22d5025bdda5dac43795cf279e69c597befc97e686f1355e9cf2b",
+        "signature": "0706a7d11feddd931985eccfb9aa1787de233de73d68adccee92ec30b3f68d99",
         "affectsGlobalScope": false
       },
       "./src/api/models/SearchResultDTO.ts": {
@@ -227,8 +232,8 @@
         "affectsGlobalScope": false
       },
       "./src/api/models/index.ts": {
-        "version": "269b45a41d804e32587580cc91e3a99ea9f568845e2a88cb321c1c3075c9c2e1",
-        "signature": "7d9e124db5b29c0bba8d89e505f92b591fe145a817160389bb4890fb714d15b1",
+        "version": "6a5d198a6e1e2dc49dca82bb46f81b8d29f843fdecdcbe133d33fa961e994d89",
+        "signature": "7218a57e94082d879df4a5f09de138705ac7a38487fccd802765d216276cf41a",
         "affectsGlobalScope": false
       },
       "./src/api/apis/DefaultApi.ts": {
@@ -746,6 +751,10 @@
         "./src/api/models/index.ts",
         "./src/api/runtime.ts"
       ],
+      "./src/api/models/RantInFeedDTO.ts": [
+        "./src/api/models/index.ts",
+        "./src/api/runtime.ts"
+      ],
       "./src/api/models/SearchResultDTO.ts": [
         "./src/api/runtime.ts"
       ],
@@ -772,6 +781,7 @@
         "./src/api/models/MakeVoteDTO.ts",
         "./src/api/models/NewsDTO.ts",
         "./src/api/models/RantDTO.ts",
+        "./src/api/models/RantInFeedDTO.ts",
         "./src/api/models/SearchResultDTO.ts",
         "./src/api/models/UserDTO.ts",
         "./src/api/models/UserRegistration.ts",
@@ -982,6 +992,9 @@
       "./src/api/models/RantDTO.ts": [
         "./src/api/models/index.ts"
       ],
+      "./src/api/models/RantInFeedDTO.ts": [
+        "./src/api/models/index.ts"
+      ],
       "./src/api/models/index.ts": [
         "./src/api/models/AssetDTO.ts",
         "./src/api/models/CommentDTO.ts",
@@ -993,6 +1006,7 @@
         "./src/api/models/MakeVoteDTO.ts",
         "./src/api/models/NewsDTO.ts",
         "./src/api/models/RantDTO.ts",
+        "./src/api/models/RantInFeedDTO.ts",
         "./src/api/models/SearchResultDTO.ts",
         "./src/api/models/UserDTO.ts",
         "./src/api/models/UserRegistration.ts",
@@ -1095,6 +1109,7 @@
       "./src/api/models/MakeVoteDTO.ts",
       "./src/api/models/NewsDTO.ts",
       "./src/api/models/RantDTO.ts",
+      "./src/api/models/RantInFeedDTO.ts",
       "./src/api/models/SearchResultDTO.ts",
       "./src/api/models/UserDTO.ts",
       "./src/api/models/UserRegistration.ts",

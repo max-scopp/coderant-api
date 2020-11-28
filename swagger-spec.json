@@ -408,13 +408,61 @@
                     "content"
                 ]
             },
+            "RantInFeedDTO": {
+                "type": "object",
+                "properties": {
+                    "uuid": {
+                        "type": "string"
+                    },
+                    "content": {
+                        "type": "string"
+                    },
+                    "asset": {
+                        "$ref": "#/components/schemas/AssetDTO"
+                    },
+                    "score": {
+                        "type": "number"
+                    },
+                    "comments": {
+                        "type": "number"
+                    },
+                    "owner": {
+                        "type": "string"
+                    },
+                    "updatedAt": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": [
+                    "uuid",
+                    "content",
+                    "asset",
+                    "score",
+                    "comments",
+                    "owner",
+                    "updatedAt",
+                    "createdAt",
+                    "tags"
+                ]
+            },
             "FeedDTO": {
                 "type": "object",
                 "properties": {
                     "rants": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/RantDTO"
+                            "$ref": "#/components/schemas/RantInFeedDTO"
                         }
                     },
                     "wrw": {
