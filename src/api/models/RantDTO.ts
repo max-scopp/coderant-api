@@ -18,6 +18,14 @@ import {
     AssetDTOFromJSON,
     AssetDTOFromJSONTyped,
     AssetDTOToJSON,
+    CommentDTO,
+    CommentDTOFromJSON,
+    CommentDTOFromJSONTyped,
+    CommentDTOToJSON,
+    VoteDTO,
+    VoteDTOFromJSON,
+    VoteDTOFromJSONTyped,
+    VoteDTOToJSON,
 } from './';
 
 /**
@@ -46,10 +54,16 @@ export interface RantDTO {
     asset: AssetDTO;
     /**
      * 
-     * @type {Array<string>}
+     * @type {Array<VoteDTO>}
      * @memberof RantDTO
      */
-    votes?: Array<string>;
+    votes?: Array<VoteDTO>;
+    /**
+     * 
+     * @type {number}
+     * @memberof RantDTO
+     */
+    userVoteState?: number;
     /**
      * 
      * @type {number}
@@ -58,10 +72,10 @@ export interface RantDTO {
     score: number;
     /**
      * 
-     * @type {Array<string>}
+     * @type {Array<CommentDTO>}
      * @memberof RantDTO
      */
-    comments: Array<string>;
+    comments: Array<CommentDTO>;
     /**
      * 
      * @type {string}
@@ -70,16 +84,16 @@ export interface RantDTO {
     owner: string;
     /**
      * 
-     * @type {string}
+     * @type {Date}
      * @memberof RantDTO
      */
-    updatedAt: string;
+    updatedAt: Date;
     /**
      * 
-     * @type {string}
+     * @type {Date}
      * @memberof RantDTO
      */
-    createdAt: string;
+    createdAt: Date;
     /**
      * 
      * @type {Array<string>}
@@ -101,12 +115,13 @@ export function RantDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): R
         'uuid': json['uuid'],
         'content': json['content'],
         'asset': AssetDTOFromJSON(json['asset']),
-        'votes': !exists(json, 'votes') ? undefined : json['votes'],
+        'votes': !exists(json, 'votes') ? undefined : ((json['votes'] as Array<any>).map(VoteDTOFromJSON)),
+        'userVoteState': !exists(json, 'userVoteState') ? undefined : json['userVoteState'],
         'score': json['score'],
-        'comments': json['comments'],
+        'comments': ((json['comments'] as Array<any>).map(CommentDTOFromJSON)),
         'owner': json['owner'],
-        'updatedAt': json['updatedAt'],
-        'createdAt': json['createdAt'],
+        'updatedAt': (new Date(json['updatedAt'])),
+        'createdAt': (new Date(json['createdAt'])),
         'tags': json['tags'],
     };
 }
@@ -123,12 +138,13 @@ export function RantDTOToJSON(value?: RantDTO | null): any {
         'uuid': value.uuid,
         'content': value.content,
         'asset': AssetDTOToJSON(value.asset),
-        'votes': value.votes,
+        'votes': value.votes === undefined ? undefined : ((value.votes as Array<any>).map(VoteDTOToJSON)),
+        'userVoteState': value.userVoteState,
         'score': value.score,
-        'comments': value.comments,
+        'comments': ((value.comments as Array<any>).map(CommentDTOToJSON)),
         'owner': value.owner,
-        'updatedAt': value.updatedAt,
-        'createdAt': value.createdAt,
+        'updatedAt': (value.updatedAt.toISOString()),
+        'createdAt': (value.createdAt.toISOString()),
         'tags': value.tags,
     };
 }

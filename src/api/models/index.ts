@@ -12,3 +12,4 @@ export * from './SearchResultDTO';
 export * from './UserDTO';
 export * from './UserRegistration';
 export * from './UserWithTokenDTO';
+export * from './VoteDTO';

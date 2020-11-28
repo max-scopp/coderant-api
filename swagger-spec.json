@@ -74,6 +74,65 @@
                     "mime"
                 ]
             },
+            "VoteDTO": {
+                "type": "object",
+                "properties": {
+                    "by": {
+                        "type": "string"
+                    },
+                    "state": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "by",
+                    "state"
+                ]
+            },
+            "CommentDTO": {
+                "type": "object",
+                "properties": {
+                    "votes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "asset": {
+                        "$ref": "#/components/schemas/AssetDTO"
+                    },
+                    "uuid": {
+                        "type": "string"
+                    },
+                    "owner": {
+                        "type": "string"
+                    },
+                    "content": {
+                        "type": "string"
+                    },
+                    "updatedAt": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "score": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "votes",
+                    "asset",
+                    "uuid",
+                    "owner",
+                    "content",
+                    "updatedAt",
+                    "createdAt",
+                    "score"
+                ]
+            },
             "RantDTO": {
                 "type": "object",
                 "properties": {
@@ -89,8 +148,11 @@
                     "votes": {
                         "type": "array",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/VoteDTO"
                         }
+                    },
+                    "userVoteState": {
+                        "type": "number"
                     },
                     "score": {
                         "type": "number"
@@ -98,16 +160,18 @@
                     "comments": {
                         "type": "array",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/CommentDTO"
                         }
                     },
                     "owner": {
                         "type": "string"
                     },
                     "updatedAt": {
+                        "format": "date-time",
                         "type": "string"
                     },
                     "createdAt": {
+                        "format": "date-time",
                         "type": "string"
                     },
                     "tags": {
@@ -143,46 +207,6 @@
                 },
                 "required": [
                     "content"
-                ]
-            },
-            "CommentDTO": {
-                "type": "object",
-                "properties": {
-                    "votes": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "asset": {
-                        "$ref": "#/components/schemas/AssetDTO"
-                    },
-                    "uuid": {
-                        "type": "string"
-                    },
-                    "owner": {
-                        "type": "string"
-                    },
-                    "content": {
-                        "type": "string"
-                    },
-                    "updatedAt": {
-                        "format": "date-time",
-                        "type": "string"
-                    },
-                    "createdAt": {
-                        "format": "date-time",
-                        "type": "string"
-                    }
-                },
-                "required": [
-                    "votes",
-                    "asset",
-                    "uuid",
-                    "owner",
-                    "content",
-                    "updatedAt",
-                    "createdAt"
                 ]
             },
             "MakeVoteDTO": {
@@ -241,6 +265,7 @@
                         "type": "string"
                     },
                     "createdAt": {
+                        "format": "date-time",
                         "type": "string"
                     },
                     "supporter": {
@@ -295,6 +320,7 @@
                         "type": "string"
                     },
                     "createdAt": {
+                        "format": "date-time",
                         "type": "string"
                     },
                     "supporter": {

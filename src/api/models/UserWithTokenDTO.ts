@@ -63,10 +63,10 @@ export interface UserWithTokenDTO {
     location: string;
     /**
      * 
-     * @type {string}
+     * @type {Date}
      * @memberof UserWithTokenDTO
      */
-    createdAt: string;
+    createdAt: Date;
     /**
      * 
      * @type {boolean}
@@ -104,7 +104,7 @@ export function UserWithTokenDTOFromJSONTyped(json: any, ignoreDiscriminator: bo
         'about': json['about'],
         'skills': json['skills'],
         'location': json['location'],
-        'createdAt': json['createdAt'],
+        'createdAt': (new Date(json['createdAt'])),
         'supporter': json['supporter'],
         'moderator': json['moderator'],
         'token': json['token'],
@@ -127,7 +127,7 @@ export function UserWithTokenDTOToJSON(value?: UserWithTokenDTO | null): any {
         'about': value.about,
         'skills': value.skills,
         'location': value.location,
-        'createdAt': value.createdAt,
+        'createdAt': (value.createdAt.toISOString()),
         'supporter': value.supporter,
         'moderator': value.moderator,
         'token': value.token,
