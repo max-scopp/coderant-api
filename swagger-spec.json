@@ -120,6 +120,9 @@
                     },
                     "score": {
                         "type": "number"
+                    },
+                    "userVoteState": {
+                        "type": "number"
                     }
                 },
                 "required": [
@@ -130,7 +133,8 @@
                     "content",
                     "updatedAt",
                     "createdAt",
-                    "score"
+                    "score",
+                    "userVoteState"
                 ]
             },
             "RantDTO": {

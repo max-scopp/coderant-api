@@ -157,8 +157,8 @@
         "affectsGlobalScope": false
       },
       "./src/api/models/CommentDTO.ts": {
-        "version": "676902d5ee31a6302398a7a0cc87defbe42ae4bea88851e784ed11015d6408c6",
-        "signature": "cda44e3c1f8cf7451f54d4511e4a3334e376dc837b3696340e10cb6da119fed2",
+        "version": "92b02bd428af6a9cf5a317be7d8b39d08559df3bc944d718c63f6badfaa4cb95",
+        "signature": "82ecf1a2ee811762cbdbc898f88792b7b7f0b2dd8acd5a89a01c4f37bc4f0b92",
         "affectsGlobalScope": false
       },
       "./src/api/models/CreateMessageDTO.ts": {

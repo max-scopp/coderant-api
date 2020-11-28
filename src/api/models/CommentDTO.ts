@@ -74,6 +74,12 @@ export interface CommentDTO {
      * @memberof CommentDTO
      */
     score: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof CommentDTO
+     */
+    userVoteState: number;
 }
 
 export function CommentDTOFromJSON(json: any): CommentDTO {
@@ -94,6 +100,7 @@ export function CommentDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean)
         'updatedAt': (new Date(json['updatedAt'])),
         'createdAt': (new Date(json['createdAt'])),
         'score': json['score'],
+        'userVoteState': json['userVoteState'],
     };
 }
 
@@ -114,6 +121,7 @@ export function CommentDTOToJSON(value?: CommentDTO | null): any {
         'updatedAt': (value.updatedAt.toISOString()),
         'createdAt': (value.createdAt.toISOString()),
         'score': value.score,
+        'userVoteState': value.userVoteState,
     };
 }
 
