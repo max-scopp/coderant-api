@@ -237,7 +237,7 @@
         "affectsGlobalScope": false
       },
       "./src/api/apis/DefaultApi.ts": {
-        "version": "6aa8cee882bcb2e27e3a7a29771e1093ac39d8b785ff4fb454d3689826a34c3d",
+        "version": "8dfb10a0494a451f82d733a8a3748da7e4ea74b84c80c72662c3e609d5cf74dc",
         "signature": "ec046e0744f2f862258ea2b6168a63ce9b5d4b14683e69181fd2821416d3faaf",
         "affectsGlobalScope": false
       },
